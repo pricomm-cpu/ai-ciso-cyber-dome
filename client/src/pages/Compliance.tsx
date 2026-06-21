@@ -35,7 +35,16 @@ export default function Compliance() {
   });
 
   const frameworks = ["all", ...Array.from(new Set(items.map(i => i.framework)))];
+  const frameworkList = Array.from(new Set(items.map(i => i.framework))).sort();
   const filtered = items.filter(i => framework === "all" || i.framework === framework);
+
+  const frameworkStatusCounts = frameworkList.reduce<Record<string, Record<string, number>>>((acc, fw) => {
+    acc[fw] = { compliant: 0, partial: 0, "non-compliant": 0, "not-assessed": 0 };
+    return acc;
+  }, {});
+  items.forEach(item => {
+    frameworkStatusCounts[item.framework][item.status] += 1;
+  });
 
   const grouped = filtered.reduce<Record<string, ComplianceItem[]>>((acc, item) => {
     (acc[item.framework] = acc[item.framework] || []).push(item);
@@ -58,9 +67,115 @@ export default function Compliance() {
         </div>
       </div>
 
-      {/* Progress */}
-      <div className="progress-bar">
-        <div className="progress-bar-fill" style={{ width: `${pct}%` }} />
+    <div className="grid gap-4 md:grid-cols-2">
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Core Risk Management Frameworks</div>
+        <ul className="space-y-2 list-disc list-inside text-sm text-muted-foreground">
+          <li><span className="font-semibold text-foreground">NIST Cybersecurity Framework (CSF) 2.0</span> — six functions: Govern, Identify, Protect, Detect, Respond, Recover. Use it to map controls and priorities across the program.</li>
+          <li><span className="font-semibold text-foreground">NIST SP 800-53</span> — detailed security and privacy controls catalog, mandatory for US federal systems and often used as a baseline outside government.</li>
+          <li><span className="font-semibold text-foreground">NIST SP 800-37</span> — Risk Management Framework (RMF) process for categorise, select, implement, assess, authorise, and monitor 800-53 controls.</li>
+          <li><span className="font-semibold text-foreground">ISO/IEC 27001</span> — international ISMS standard, certifiable and commonly required for enterprise vendor relationships worldwide.</li>
+          <li><span className="font-semibold text-foreground">ISO/IEC 27002</span> — companion guidance to 27001 with practical control implementation advice.</li>
+          <li><span className="font-semibold text-foreground">FAIR</span> — quantitative risk model for translating cyber risk into financial terms for the board.</li>
+        </ul>
+      </div>
+
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Technical Control Frameworks</div>
+        <ul className="space-y-2 list-disc list-inside text-sm text-muted-foreground">
+          <li><span className="font-semibold text-foreground">CIS Controls</span> — prioritized practical safeguards, popular for smaller and mid-size organisations needing a fast baseline.</li>
+          <li><span className="font-semibold text-foreground">MITRE ATT&amp;CK</span> — adversary tactics and techniques knowledge base used for threat modeling, red/blue team exercises, and detection engineering.</li>
+          <li><span className="font-semibold text-foreground">Zero Trust Architecture (NIST SP 800-207)</span> — assumes no implicit trust and is increasingly a CISO mandate for federal-adjacent and hybrid-cloud environments.</li>
+        </ul>
+      </div>
+
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Industry &amp; Regulatory Compliance</div>
+        <ul className="space-y-2 list-disc list-inside text-sm text-muted-foreground">
+          <li><span className="font-semibold text-foreground">PCI DSS</span> — payment card data controls.</li>
+          <li><span className="font-semibold text-foreground">HIPAA / HITECH</span> — US healthcare privacy and security.</li>
+          <li><span className="font-semibold text-foreground">SOC 2</span> — service organisation controls for SaaS and managed service providers.</li>
+          <li><span className="font-semibold text-foreground">GDPR / Australian Privacy Act / APRA CPS 234</span> — data protection and financial services requirements in Europe and Australia.</li>
+          <li><span className="font-semibold text-foreground">FedRAMP</span> — US government cloud authorisation.</li>
+          <li><span className="font-semibold text-foreground">NIS2 Directive</span> — EU critical infrastructure cybersecurity obligations.</li>
+          <li><span className="font-semibold text-foreground">SOX</span> — financial reporting controls including IT general controls.</li>
+        </ul>
+      </div>
+
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Privacy, Response &amp; Governance</div>
+        <ul className="space-y-2 list-disc list-inside text-sm text-muted-foreground">
+          <li><span className="font-semibold text-foreground">NIST Privacy Framework</span> — pairs with CSF for organisations handling significant personal data.</li>
+          <li><span className="font-semibold text-foreground">NIST SP 800-61</span> — standard incident handling lifecycle from preparation through post-incident review.</li>
+          <li><span className="font-semibold text-foreground">SANS Incident Response Process</span> — widely taught incident lifecycle alternative.</li>
+          <li><span className="font-semibold text-foreground">COBIT</span> — IT governance framework aligning security with broader business and audit committee objectives.</li>
+          <li><span className="font-semibold text-foreground">C2M2</span> — capability maturity model useful for cybersecurity program self-assessment.</li>
+          <li><span className="font-semibold text-foreground">CMMC</span> — required for US defense-industrial-base contractors and layered on NIST 800-171.</li>
+        </ul>
+      </div>
+    </div>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        <div className="rounded-2xl border border-border bg-secondary p-4">
+          <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Frameworks tracked</div>
+          <div className="text-3xl font-bold text-foreground">{frameworkList.length}</div>
+          <div className="text-xs text-muted-foreground mt-1">Distinct compliance frameworks mapped by the AI CISO.</div>
+        </div>
+        <div className="rounded-2xl border border-border bg-secondary p-4">
+          <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Control coverage</div>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex items-center justify-between">
+              <span>Compliant</span>
+              <span className="font-semibold text-foreground">{items.filter(i => i.status === "compliant").length}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span>Partial</span>
+              <span className="font-semibold text-foreground">{items.filter(i => i.status === "partial").length}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span>Non-compliant</span>
+              <span className="font-semibold text-foreground">{items.filter(i => i.status === "non-compliant").length}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span>Not assessed</span>
+              <span className="font-semibold text-foreground">{items.filter(i => i.status === "not-assessed").length}</span>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border bg-secondary p-4">
+          <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Most urgent focus</div>
+          <div className="text-sm text-muted-foreground leading-relaxed">
+            Review non-compliant controls first, then close partial controls. This builds a stronger foundation for NIST CSF, ISO 27001, SOC 2, and APRA CPS 234 compliance.
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Framework status matrix</div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs text-muted-foreground">
+            <thead>
+              <tr>
+                <th className="py-2 pr-4">Framework</th>
+                <th className="py-2 px-3">Compliant</th>
+                <th className="py-2 px-3">Partial</th>
+                <th className="py-2 px-3">Non-compliant</th>
+                <th className="py-2 px-3">Not assessed</th>
+              </tr>
+            </thead>
+            <tbody>
+              {frameworkList.map(fw => (
+                <tr key={fw} className="border-t border-border">
+                  <td className="py-2 pr-4 font-medium text-foreground">{fw}</td>
+                  <td className="py-2 px-3">{frameworkStatusCounts[fw].compliant}</td>
+                  <td className="py-2 px-3">{frameworkStatusCounts[fw].partial}</td>
+                  <td className="py-2 px-3">{frameworkStatusCounts[fw]["non-compliant"]}</td>
+                  <td className="py-2 px-3">{frameworkStatusCounts[fw]["not-assessed"]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* Framework tabs */}

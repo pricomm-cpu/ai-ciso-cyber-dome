@@ -106,7 +106,12 @@ function FeatureCard({ icon: Icon, title, desc, color }: { icon: any; title: str
         <Icon size={16} />
       </div>
       <div>
-        <div className="text-sm font-semibold text-foreground mb-1">{title}</div>
+        <div className="flex items-center gap-2 mb-1">
+          <div className="text-sm font-semibold text-foreground">{title}</div>
+          {title === "Compliance Hub" && (
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold">NIST / ISO / SOC</span>
+          )}
+        </div>
         <div className="text-xs text-muted-foreground leading-relaxed">{desc}</div>
       </div>
     </div>
@@ -219,9 +224,8 @@ export default function Landing() {
         {/* Badge */}
         <div className="relative flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-[11px] text-cyan-400 font-medium mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          Autonomous AI · 8 Agents · 34 Connectors · No SI · No MSP · No Agency
+          Autonomous AI · 8 Agents · 34 Connectors · Direct access
         </div>
-
         {/* Headline */}
         <h1 className="relative max-w-4xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-foreground mb-6">
           Your AI CISO.{" "}
@@ -236,7 +240,7 @@ export default function Landing() {
 
         {/* Sub */}
         <p className="relative max-w-2xl text-base text-muted-foreground leading-relaxed mb-10">
-          Cyber Dome is the operating system for the modern CISO. A direct line between you and every cybersecurity product, platform, and specialist — no MSP, no SI, no consulting firm, no vendor meeting, no recruiting agency. Ever.
+          Cyber Dome is the operating system for the modern CISO. A direct line between you and every cybersecurity product, platform, and specialist. Ever.
         </p>
 
         {/* CTAs */}
@@ -294,16 +298,44 @@ export default function Landing() {
           {[
             { icon: BarChart3,    title: "Command Centre",       color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",    desc: "Real-time security operations dashboard. KPI cards, aggregate risk score, live threat feed, and AI action log — your 24/7 SOC at a glance." },
             { icon: Target,       title: "Threat Monitor",       color: "text-red-400 bg-red-400/10 border-red-400/20",       desc: "AI-powered threat triage. Correlates CVEs against your asset inventory, matches IOCs, and surfaces prioritised AI recommendations — no analyst needed." },
-            { icon: ClipboardCheck,title:"Compliance Hub",       color: "text-green-400 bg-green-400/10 border-green-400/20", desc: "Continuous compliance across Essential 8, ISO 27001, SOC 2, and PCI DSS. Auto-collects evidence and flags control gaps before your next audit." },
+            { icon: ClipboardCheck,title:"Compliance Hub",       color: "text-green-400 bg-green-400/10 border-green-400/20", desc: "Continuous compliance across NIST CSF, ISO 27001, SOC 2, PCI DSS, APRA CPS 234, and Essential 8. Auto-collects evidence and flags control gaps before your next audit." },
             { icon: Server,       title: "Tech Stack Audit",     color: "text-purple-400 bg-purple-400/10 border-purple-400/20", desc: "Tracks every asset's EOL date, maps known CVEs to products, and recommends vendor replacements — no consultant required, no sales call needed." },
             { icon: Zap,          title: "Incident Response",    color: "text-orange-400 bg-orange-400/10 border-orange-400/20", desc: "AI-generated playbooks, phase-by-phase tracking, root cause analysis, and stakeholder communication drafts. From detection to closure." },
             { icon: Eye,          title: "Posture Assessment",   color: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20", desc: "200-question assessment across 10 domains. Why each question matters, how to fix each gap — with tool recommendations built in." },
             { icon: BarChart3,    title: "Board Report",         color: "text-blue-400 bg-blue-400/10 border-blue-400/20",    desc: "AI-authored executive summaries, risk narratives, and top-5 action items. Board-ready in one click — no vCISO copywriting needed." },
-            { icon: Globe,        title: "Connector Marketplace",color: "text-pink-400 bg-pink-400/10 border-pink-400/20",    desc: "34 curated connectors with AI verdicts, SMB fit scores, and one-click connect. The CISO picks the best — no vendor pitch, no SI to configure." },
+            { icon: Globe,        title: "Connector Marketplace",color: "text-pink-400 bg-pink-400/10 border-pink-400/20",    desc: "34 curated connectors with AI verdicts, SMB fit scores, and one-click connect. The CISO picks the best — vendor-free setup and instant configuration." },
             { icon: Activity,     title: "Agent Swarm",          color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",    desc: "8 specialised AI agents running continuously. Trigger any agent on demand. Results flow back into every module automatically." },
-            { icon: ShoppingCart, title: "Procurement (Ariba)",  color: "text-orange-400 bg-orange-400/10 border-orange-400/20", desc: "AI-evaluated products, direct PO via SAP Ariba. No vendor sales call, no MSP markup, no SI required to configure the integration." },
-            { icon: UserCheck,    title: "Talent Marketplace",   color: "text-green-400 bg-green-400/10 border-green-400/20",  desc: "AI-matched cybersecurity specialists, hired directly. No recruiting agency, no consulting firm. Onboarding via Workday — zero intermediary." },
+            { icon: ShoppingCart, title: "Procurement (Ariba)",  color: "text-orange-400 bg-orange-400/10 border-orange-400/20", desc: "AI-evaluated products, direct PO via SAP Ariba. Vendor-free purchasing, zero MSP markup, SI-free integration." },
+            { icon: UserCheck,    title: "Talent Marketplace",   color: "text-green-400 bg-green-400/10 border-green-400/20",  desc: "AI-matched cybersecurity specialists, hired directly. Onboarding via Workday — zero intermediary." },
           ].map(f => <FeatureCard key={f.title} {...f} />)}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-10">
+        <div className="rounded-3xl border border-border bg-secondary p-6">
+          <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Framework coverage</div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm text-muted-foreground">
+            <div>
+              <p className="font-semibold text-foreground">Risk Management</p>
+              <p className="mt-1">NIST CSF, NIST SP 800-37, ISO 27001, ISO 27002, FAIR.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Technical Controls</p>
+              <p className="mt-1">CIS Controls, MITRE ATT&amp;CK, NIST SP 800-207 Zero Trust.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Industry &amp; Privacy</p>
+              <p className="mt-1">SOC 2, PCI DSS, HIPAA, GDPR, APRA CPS 234, NIS2.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Incident Response</p>
+              <p className="mt-1">NIST SP 800-61 and the SANS incident response lifecycle.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Governance &amp; Maturity</p>
+              <p className="mt-1">COBIT, C2M2, CMMC for defense supply chain compliance.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -318,13 +350,13 @@ export default function Landing() {
               <h2 className="text-3xl font-bold text-foreground mb-4 leading-tight">
                 8 AI agents working{" "}
                 <span className="text-cyan-400">around the clock</span>{" "}
-                — no MSP required
+                — direct operations
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 Each agent is a specialised AI that ingests data from your connected tools, cross-references threat intelligence, and pushes findings into every relevant module. 2,427 runs logged daily in the demo environment — all autonomous, all documented.
               </p>
               <div className="flex flex-col gap-2.5">
-                {["Zero MSP dependency — agents replace your SOC tier-1", "Every agent can be triggered on-demand by the CISO", "All agents share data — findings flow across modules automatically", "Full audit trail of every decision and recommendation"].map(p => (
+                {["Zero external dependency — agents replace your SOC tier-1", "Every agent can be triggered on-demand by the CISO", "All agents share data — findings flow across modules automatically", "Full audit trail of every decision and recommendation"].map(p => (
                   <div key={p} className="flex items-start gap-2.5 text-sm text-foreground/80">
                     <CheckCircle2 size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                     {p}
@@ -374,10 +406,10 @@ export default function Landing() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {[
-            { icon: Globe,        title: "No MSP needed",   old: "Managed Security Service Provider",    new_: "8 autonomous AI agents running 24/7",      saving: "Save $80–250k/yr" },
-            { icon: Server,       title: "No SI needed",    old: "Systems Integrator for tool config",   new_: "One-click connectors, AI-configured",      saving: "Save weeks of project time" },
-            { icon: Users,        title: "No agency needed",old: "Recruiting firm for specialists",      new_: "AI-matched talent, hired directly",         saving: "Save 15–25% agency margin" },
-            { icon: ShoppingCart, title: "No vendor pitch", old: "Weeks of vendor demos & sales calls",  new_: "AI verdict + direct Ariba PO",              saving: "Save weeks per purchase" },
+            { icon: Globe,        title: "Direct operations",   old: "Managed Security Service Provider",    new_: "8 autonomous AI agents running 24/7",      saving: "Save $80–250k/yr" },
+            { icon: Server,       title: "SI-free integration", old: "Systems Integrator for tool config",   new_: "One-click connectors, AI-configured",      saving: "Save weeks of project time" },
+            { icon: Users,        title: "Direct hiring",      old: "Recruiting firm for specialists",      new_: "AI-matched talent, hired directly",         saving: "Save 15–25% agency margin" },
+            { icon: ShoppingCart, title: "Vendor-free purchasing", old: "Weeks of vendor demos & sales calls",  new_: "AI verdict + direct Ariba PO",              saving: "Save weeks per purchase" },
           ].map(({ icon: Icon, title, old, new_, saving }) => (
             <div key={title} className="glow-card rounded-xl p-5 flex flex-col gap-3">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center border text-cyan-400 bg-cyan-400/10 border-cyan-400/20">
@@ -448,10 +480,10 @@ export default function Landing() {
           </div>
           <h2 className="text-3xl font-bold text-foreground mb-3">
             34 connectors. One platform.{" "}
-            <span className="text-cyan-400">No sales calls. No middlemen.</span>
+            <span className="text-cyan-400">Sales-free process. Middleman-free.</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            AI analyses your gaps and recommends the best-fit tools with SMB fit scores, pricing, strengths, and weaknesses. Connect with one click — no vendor meeting, no SI required.
+            AI analyses your gaps and recommends the best-fit tools with SMB fit scores, pricing, strengths, and weaknesses. Connect with one click — vendor meetings aren't needed, SI not required.
           </p>
         </div>
 
@@ -589,16 +621,15 @@ export default function Landing() {
               <h2 className="text-3xl font-bold text-foreground mb-4 leading-tight">
                 Need people? AI finds them.{" "}
                 <span className="text-cyan-400">You pick directly.</span>
-                {" "}No agency.
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Cyber Dome's AI agent analyses your posture gaps and surfaces pre-vetted cybersecurity specialists ranked by match score. The CISO picks directly. Engagement flows into Workday automatically — no recruiting firm, no consulting firm, no SI, no margin.
+                Cyber Dome's AI agent analyses your posture gaps and surfaces pre-vetted cybersecurity specialists ranked by match score. The CISO picks directly. Engagement flows into Workday automatically — direct specialist workflow.
               </p>
               <div className="flex flex-col gap-2.5 mb-8">
                 {[
                   "AI matches specialists to your exact security gaps",
                   "Pre-vetted profiles — certifications, experience, availability",
-                  "Engage directly — no recruiter, no agency commission",
+                  "Engage directly with transparent terms",
                   "Onboarding via Workday — contracts, BGC, tasks automated",
                   "Full specialist marketplace: vCISO, IR, pentest, GRC, cloud",
                 ].map(p => (
@@ -665,11 +696,11 @@ export default function Landing() {
             <CmpRow label="Threat response"       us="Seconds"               them="Hours to days" />
             <CmpRow label="Compliance monitoring" us="Continuous, automated" them="Annual or quarterly" />
             <CmpRow label="Board report"          us="1-click, AI-authored"  them="Days of consultant time" />
-            <CmpRow label="Vendor selection"      us="AI verdict, no call"   them="Weeks of vendor demos" />
+            <CmpRow label="Vendor selection"      us="AI verdict, direct decision"   them="Weeks of vendor demos" />
             <CmpRow label="Incident playbook"     us="Generated instantly"   them="Consultant engagement" />
             <CmpRow label="Assessment"            us="200Q self-serve"       them="$10k+ gap assessment" />
             <CmpRow label="Technology refresh"    us="AI-recommended"        them="SI project required" />
-            <CmpRow label="Specialist hiring"      us="AI-matched, no agency" them="Consulting firm + 15–25% margin" />
+            <CmpRow label="Specialist hiring"      us="AI-matched, direct hire" them="Consulting firm + 15–25% margin" />
             <CmpRow label="Product procurement"    us="Ariba PO, same day"    them="Weeks of vendor demos" />
             <CmpRow label="Lock-in risk"           us="None"                  them="Multi-year contracts" />
           </div>
@@ -811,14 +842,14 @@ export default function Landing() {
         <div className="relative max-w-4xl mx-auto px-6 py-28 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-[11px] text-cyan-400 font-medium mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            Live platform — no sales call required
+            Live platform — sales calls aren't required
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-5 leading-tight">
             Your AI CISO is<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">ready right now.</span>
           </h2>
           <p className="text-base text-muted-foreground max-w-xl mx-auto mb-10">
-            Launch Cyber Dome in minutes. No setup wizard, no vendor meeting, no systems integrator required. Your autonomous security operation starts the moment you log in.
+            Launch Cyber Dome in minutes. No setup wizard, no systems integration delay. Your autonomous security operation starts the moment you log in.
           </p>
           <Link href="/app">
             <a className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-cyan-500 text-background text-base font-bold hover:bg-cyan-400 transition-all shadow-[0_0_40px_hsl(192_100%_42%_/_0.3)] hover:shadow-[0_0_60px_hsl(192_100%_42%_/_0.45)] group">
@@ -828,7 +859,7 @@ export default function Landing() {
             </a>
           </Link>
           <div className="mt-6 flex items-center justify-center gap-5 text-xs text-muted-foreground">
-            {["No credit card required","No vendor meeting","Cancel anytime"].map(t => (
+            {["Credit card optional","Vendor meetings aren't required","Cancel anytime"].map(t => (
               <div key={t} className="flex items-center gap-1.5">
                 <CheckCircle2 size={11} className="text-green-400" />
                 {t}
@@ -847,7 +878,7 @@ export default function Landing() {
               <path d="M16 4 L24 8.5 L24 19 Q24 26 16 29 Q8 26 8 19 L8 8.5 Z" stroke="hsl(192 100% 42%)" strokeWidth="1.5" fill="none"/>
               <circle cx="16" cy="18" r="3" fill="hsl(192 100% 42%)"/>
             </svg>
-            <span className="text-xs text-muted-foreground">AI CISO Cyber Dome · No MSP · No SI · No Agency · No Vendor Meeting</span>
+            <span className="text-xs text-muted-foreground">AI CISO Cyber Dome · Direct platform · Vendor-free · SI-free</span>
           </div>
           <div className="flex items-center gap-5 text-xs text-muted-foreground">
             {["Privacy","Terms","Security"].map(l => (

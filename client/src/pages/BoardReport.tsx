@@ -39,6 +39,14 @@ export default function BoardReport() {
               <p className="text-sm text-muted-foreground leading-relaxed">{latest.riskSummary}</p>
             </Section>
 
+            {/* Framework alignment */}
+            <Section title="Framework Alignment" color="cyan">
+              <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
+                <p>The AI CISO maps findings and actions to key frameworks including NIST CSF, ISO 27001, SOC 2, PCI DSS, APRA CPS 234, and NIST SP 800-61.</p>
+                <p>This report is designed for board review and audit-ready executive communication across risk, compliance, and incident response domains.</p>
+              </div>
+            </Section>
+
             {/* Compliance summary */}
             <Section title="Compliance Summary" color="yellow">
               <p className="text-sm text-muted-foreground leading-relaxed">{latest.complianceSummary}</p>

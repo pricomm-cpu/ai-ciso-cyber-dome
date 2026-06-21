@@ -438,6 +438,13 @@ export default function Procurement() {
         </p>
       </div>
 
+      <Card className="glow-card p-4">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Framework-ready procurement</div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Tools are scored against how well they support compliance programs like NIST CSF, ISO 27001, SOC 2, PCI DSS, APRA CPS 234, and Essential 8.
+        </p>
+      </Card>
+
       {/* How it works */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
         {[

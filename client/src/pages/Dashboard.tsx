@@ -124,6 +124,33 @@ export default function Dashboard() {
         ))}
       </div>
 
+      <Card className="glow-card">
+        <CardContent className="p-4">
+          <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Framework-aligned posture</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+            <div>
+              <p className="font-semibold text-foreground">NIST CSF / ISO 27001</p>
+              <p className="mt-1">Aligns your compliance score with both risk management and certifiable ISMS controls.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">SOC 2 / PCI DSS</p>
+              <p className="mt-1">Highlights practical controls that matter for SaaS service providers and payment security.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">APRA CPS 234 / NIST SP 800-61</p>
+              <p className="mt-1">Connects Australian financial services maturity and incident response evidence for board reporting.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Zero Trust / MITRE ATT&CK</p>
+              <p className="mt-1">Supports modern detection and access controls that strengthen your overall cyber posture.</p>
+            </div>
+          </div>
+          <div className="mt-4 rounded-xl border border-border bg-secondary p-3 text-sm text-muted-foreground">
+            The dashboard translates active threat, compliance and incident data into framework-aware posture signals the CISO can share with audit, risk and executive stakeholders.
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Risk + Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Risk ring */}
