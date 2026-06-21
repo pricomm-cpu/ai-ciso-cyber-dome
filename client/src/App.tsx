@@ -69,6 +69,9 @@ function App() {
           <Route path="/app/news">
             {() => <Layout><CyberNews /></Layout>}
           </Route>
+          <Route path="/app/threat-ingestion">
+            {() => <Layout><ThreatIngestion /></Layout>}
+          </Route>
 
           <Route component={NotFound} />
         </Switch>
