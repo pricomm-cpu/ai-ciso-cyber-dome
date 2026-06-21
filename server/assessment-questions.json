@@ -1,0 +1,1802 @@
+[
+  {
+    "id": 1,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do you use single sign-on (SSO) to manage access to your business applications?",
+    "weight": "High",
+    "fix": "Okta, JumpCloud, Google Workspace SSO, Microsoft Entra",
+    "why": "Eliminates password reuse; centralises access control"
+  },
+  {
+    "id": 2,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Is multi-factor authentication (MFA) enforced for every employee, with no exceptions?",
+    "weight": "High",
+    "fix": "Enforce via SSO provider or individual app settings",
+    "why": "Single biggest control to prevent account takeover"
+  },
+  {
+    "id": 3,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Is MFA enforced specifically for admin and privileged accounts?",
+    "weight": "High",
+    "fix": "Hardware key (YubiKey) recommended for admins",
+    "why": "Admin accounts are primary target in breaches"
+  },
+  {
+    "id": 4,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do you use a company-wide password manager?",
+    "weight": "Medium",
+    "fix": "1Password Teams, Bitwarden Business, Dashlane",
+    "why": "Prevents password reuse and weak passwords"
+  },
+  {
+    "id": 5,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do you have a formal process for removing access within 24 hours when someone leaves?",
+    "weight": "High",
+    "fix": "Offboarding checklist + SSO deprovisioning",
+    "why": "Ex-employee access is a leading cause of breaches"
+  },
+  {
+    "id": 6,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do you maintain separate admin accounts distinct from daily-use accounts?",
+    "weight": "Medium",
+    "fix": "Create dedicated admin accounts; never use for email/web",
+    "why": "Limits blast radius if daily account is compromised"
+  },
+  {
+    "id": 7,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do you track every SaaS application and software tool your team has access to?",
+    "weight": "Medium",
+    "fix": "SaaS management tool: Torii, Zylo, or manual spreadsheet",
+    "why": "Shadow IT is a blind spot in most SMBs"
+  },
+  {
+    "id": 8,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you conduct quarterly access reviews to confirm each person only has the access they still need?",
+    "weight": "Medium",
+    "fix": "Schedule recurring calendar review with team leads",
+    "why": "Permissions creep silently over time"
+  },
+  {
+    "id": 9,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you enforce least privilege \u2014 people only have access to what their role requires?",
+    "weight": "High",
+    "fix": "Define role-based access groups; avoid admin by default",
+    "why": "Limits damage from compromised accounts"
+  },
+  {
+    "id": 10,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you have a process for approving new software or tool access requests before they're granted?",
+    "weight": "Medium",
+    "fix": "Simple approval workflow via email or Slack",
+    "why": "Prevents uncontrolled SaaS sprawl"
+  },
+  {
+    "id": 11,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Are service accounts and shared credentials documented, rotated regularly, and not shared informally?",
+    "weight": "High",
+    "fix": "Store in secrets manager; rotate every 90 days",
+    "why": "Service accounts are often forgotten and over-privileged"
+  },
+  {
+    "id": 12,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you have visibility into employees using personal email to sign up for work tools?",
+    "weight": "Medium",
+    "fix": "SaaS discovery tools or periodic self-reporting survey",
+    "why": "Personal accounts bypass IT control and offboarding"
+  },
+  {
+    "id": 13,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you monitor for dormant accounts (unused 30+ days) and deactivate them?",
+    "weight": "Medium",
+    "fix": "SSO provider reports; schedule monthly dormant account sweep",
+    "why": "Dormant accounts are easy targets for attackers"
+  },
+  {
+    "id": 14,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you use conditional access policies (e.g. block logins from unexpected countries)?",
+    "weight": "Medium",
+    "fix": "Available in Okta, Azure AD, Google Workspace",
+    "why": "Stops credential-stuffing attacks from offshore"
+  },
+  {
+    "id": 15,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Do you have a privileged access management (PAM) solution for sensitive systems?",
+    "weight": "Low",
+    "fix": "CyberArk, BeyondTrust, or open-source Teleport",
+    "why": "Critical for companies with sensitive databases or infra"
+  },
+  {
+    "id": 16,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Do you require re-authentication for sensitive systems after a period of inactivity?",
+    "weight": "Medium",
+    "fix": "Configure session timeout in SSO / app settings",
+    "why": "Limits risk from unattended sessions"
+  },
+  {
+    "id": 17,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Do you log and audit all privileged account activity?",
+    "weight": "Medium",
+    "fix": "CloudTrail (AWS), Azure Monitor, or SIEM tool",
+    "why": "Privileged actions must be auditable"
+  },
+  {
+    "id": 18,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Have you tested your offboarding process in the last 6 months to verify access is fully removed?",
+    "weight": "Low",
+    "fix": "Run a test offboarding on a fictitious or past employee",
+    "why": "Most companies assume offboarding works; many don't"
+  },
+  {
+    "id": 101,
+    "category": "Identity & Access Management",
+    "level": "Basic",
+    "question": "Do all employees receive a unique username and password \u2014 no shared logins for any system?",
+    "weight": "High",
+    "fix": "Enforce unique credentials in all application settings",
+    "why": "Shared credentials prevent accountability and breach attribution"
+  },
+  {
+    "id": 102,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Are contractor and consultant accounts issued on a time-limited basis and auto-expired?",
+    "weight": "High",
+    "fix": "Set account expiry date at creation; review weekly",
+    "why": "Contractor accounts are routinely left active after engagement ends"
+  },
+  {
+    "id": 103,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Do you use phishing-resistant MFA (FIDO2/WebAuthn/hardware keys) for your highest-risk accounts?",
+    "weight": "High",
+    "fix": "YubiKey, Google Titan, or FIDO2 passkeys via Okta/Entra",
+    "why": "TOTP and SMS MFA can be bypassed via SIM swap or real-time phishing"
+  },
+  {
+    "id": 104,
+    "category": "Identity & Access Management",
+    "level": "Deeper",
+    "question": "Is there a formal joiner process that provisions access based on role before day one?",
+    "weight": "Medium",
+    "fix": "Automated provisioning via SSO with role templates",
+    "why": "Inconsistent onboarding creates gaps and excess permissions from day one"
+  },
+  {
+    "id": 105,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Can you produce an access report for any employee showing all their permissions within one hour?",
+    "weight": "Medium",
+    "fix": "IGA tools: SailPoint, Saviynt, or custom SSO reporting",
+    "why": "Auditors and incident responders require this capability on demand"
+  },
+  {
+    "id": 106,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Do you use just-in-time (JIT) access for privileged operations rather than standing admin rights?",
+    "weight": "Medium",
+    "fix": "Implement JIT via PIM in Azure AD or CyberArk",
+    "why": "Standing admin access dramatically increases risk window"
+  },
+  {
+    "id": 107,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Do you have break-glass emergency accounts with tightly controlled access and full audit logging?",
+    "weight": "Medium",
+    "fix": "Create sealed emergency admin account; store credentials in a vault",
+    "why": "Emergency access without controls becomes a persistent backdoor"
+  },
+  {
+    "id": 108,
+    "category": "Identity & Access Management",
+    "level": "Advanced",
+    "question": "Are all API tokens, OAuth grants, and machine identities inventoried and reviewed quarterly?",
+    "weight": "High",
+    "fix": "GitHub token audit, OAuth review in IdP, secrets manager inventory",
+    "why": "Machine identities now outnumber human accounts 45:1 in most orgs"
+  },
+  {
+    "id": 19,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Do all company devices have endpoint detection and response (EDR) or antivirus software?",
+    "weight": "High",
+    "fix": "CrowdStrike, SentinelOne, Microsoft Defender for Business",
+    "why": "Essential first line of malware defence"
+  },
+  {
+    "id": 20,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Are all company devices encrypted (full-disk encryption enabled)?",
+    "weight": "High",
+    "fix": "BitLocker (Windows), FileVault (Mac) \u2014 enable in MDM",
+    "why": "Protects data if device is lost or stolen"
+  },
+  {
+    "id": 21,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Do you have a Mobile Device Management (MDM) system managing all company devices?",
+    "weight": "High",
+    "fix": "Jamf (Mac), Intune (Microsoft), Kandji, Mosyle",
+    "why": "Allows remote wipe, policy enforcement, visibility"
+  },
+  {
+    "id": 22,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Are operating systems and software kept up to date with automatic updates enforced?",
+    "weight": "High",
+    "fix": "Enforce via MDM; never allow staff to defer patches",
+    "why": "Unpatched systems are the #1 exploit entry point"
+  },
+  {
+    "id": 23,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Do you have a documented policy for personal devices accessing company systems (BYOD)?",
+    "weight": "Medium",
+    "fix": "Define acceptable use; enforce MDM enrolment for BYOD",
+    "why": "Personal devices often lack corporate security controls"
+  },
+  {
+    "id": 24,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Do you have a documented process if a device is lost, stolen, or compromised?",
+    "weight": "High",
+    "fix": "Written runbook: who to call, how to wipe, how to report",
+    "why": "Without a plan, response is slow and inconsistent"
+  },
+  {
+    "id": 25,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Can you remotely wipe a lost or stolen device within 1 hour?",
+    "weight": "High",
+    "fix": "MDM remote wipe capability; test this quarterly",
+    "why": "Speed of wipe determines data exposure window"
+  },
+  {
+    "id": 26,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Do you have a policy preventing employees from installing unapproved software?",
+    "weight": "Medium",
+    "fix": "Enforce application allowlist via MDM",
+    "why": "Unapproved software is a major malware vector"
+  },
+  {
+    "id": 27,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Are USB ports and removable media restricted or monitored on company devices?",
+    "weight": "Medium",
+    "fix": "Block via MDM or EDR policy",
+    "why": "USB exfiltration is underestimated in SMBs"
+  },
+  {
+    "id": 28,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Do you monitor endpoint health and get alerted if a device goes unpatched?",
+    "weight": "Medium",
+    "fix": "MDM compliance dashboard; EDR health monitoring",
+    "why": "Visibility gaps create silent vulnerabilities"
+  },
+  {
+    "id": 29,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Do you have a process for securely decommissioning old devices before disposal?",
+    "weight": "Medium",
+    "fix": "Full wipe + factory reset; certificate of destruction",
+    "why": "Old devices with company data are routinely sold/donated"
+  },
+  {
+    "id": 30,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Are company devices protected by screen lock with a maximum 5-minute idle timeout?",
+    "weight": "Medium",
+    "fix": "Enforce via MDM policy",
+    "why": "Unattended devices in offices or caf\u00e9s are easy targets"
+  },
+  {
+    "id": 31,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Do you scan devices for vulnerabilities on at least a monthly schedule?",
+    "weight": "Medium",
+    "fix": "Tenable.io, Intruder, or Qualys",
+    "why": "Patch management only works if you know what's unpatched"
+  },
+  {
+    "id": 32,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Do you have detection for malware that evades traditional antivirus (e.g. fileless malware)?",
+    "weight": "Low",
+    "fix": "CrowdStrike Falcon, SentinelOne Singularity",
+    "why": "Advanced attackers use memory-based techniques"
+  },
+  {
+    "id": 109,
+    "category": "Devices & Endpoints",
+    "level": "Basic",
+    "question": "Are all mobile devices (phones and tablets) used for work enrolled in MDM with a PIN or biometric lock?",
+    "weight": "High",
+    "fix": "Enforce via Intune, Jamf, or Google Workspace MDM",
+    "why": "Unmanaged mobile devices are the fastest-growing attack surface"
+  },
+  {
+    "id": 110,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Do you have an asset register listing every device with its owner, OS version, and last patch date?",
+    "weight": "Medium",
+    "fix": "Maintained in MDM platform or a simple spreadsheet",
+    "why": "You cannot secure assets you cannot enumerate"
+  },
+  {
+    "id": 111,
+    "category": "Devices & Endpoints",
+    "level": "Deeper",
+    "question": "Are developer workstations treated with the same security controls as all other endpoints?",
+    "weight": "High",
+    "fix": "Developers are high-value targets; apply EDR, MDM, and disk encryption",
+    "why": "Developer machines hold source code, credentials, and production access"
+  },
+  {
+    "id": 112,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Do you isolate endpoints that are suspected of compromise from the network automatically or with a one-click workflow?",
+    "weight": "High",
+    "fix": "EDR network isolation feature (CrowdStrike, SentinelOne)",
+    "why": "Speed of isolation determines how far ransomware or attackers spread"
+  },
+  {
+    "id": 113,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Are your endpoints configured with application control or allowlisting to prevent execution of unknown binaries?",
+    "weight": "Medium",
+    "fix": "Windows Defender Application Control (WDAC), Airlock Digital",
+    "why": "Application control is Essential 8 Maturity Level 3 and stops most malware"
+  },
+  {
+    "id": 114,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Do you have host-based firewall rules configured on all endpoints in addition to the network firewall?",
+    "weight": "Medium",
+    "fix": "Enforce via MDM; Windows Defender Firewall or macOS Application Firewall",
+    "why": "Host firewall provides a last line of defence if network perimeter fails"
+  },
+  {
+    "id": 115,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Is browser security hardened on all endpoints (extensions restricted, dangerous settings disabled)?",
+    "weight": "Medium",
+    "fix": "Browser hardening via MDM; block unapproved extensions",
+    "why": "Browser is the most common initial access vector in modern attacks"
+  },
+  {
+    "id": 116,
+    "category": "Devices & Endpoints",
+    "level": "Advanced",
+    "question": "Do you conduct at least annual red team or adversary simulation exercises against your endpoints?",
+    "weight": "Low",
+    "fix": "Engage a penetration tester; use tools like Atomic Red Team",
+    "why": "Simulated attacks reveal gaps that scanners miss"
+  },
+  {
+    "id": 33,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Do you know where all your sensitive data lives \u2014 every system and storage service?",
+    "weight": "High",
+    "fix": "Data mapping exercise; use a simple spreadsheet to start",
+    "why": "You cannot protect what you cannot locate"
+  },
+  {
+    "id": 34,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Is sensitive data encrypted at rest in all storage systems?",
+    "weight": "High",
+    "fix": "Enable encryption on RDS, S3, Google Drive, Dropbox",
+    "why": "Encryption at rest is a baseline compliance requirement"
+  },
+  {
+    "id": 35,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Is sensitive data encrypted in transit (TLS enforced for all data movement)?",
+    "weight": "High",
+    "fix": "Enforce HTTPS everywhere; use TLS 1.2 or higher",
+    "why": "Unencrypted transit exposes data to interception"
+  },
+  {
+    "id": 36,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Do you back up critical data regularly and test restores within the last 90 days?",
+    "weight": "High",
+    "fix": "3-2-1 backup rule; test restore quarterly",
+    "why": "Untested backups fail when you need them most"
+  },
+  {
+    "id": 37,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Are your cloud storage buckets and databases access-controlled with no public exposure?",
+    "weight": "High",
+    "fix": "AWS S3 Block Public Access; GCS/Azure equivalent",
+    "why": "Publicly exposed S3 buckets are a chronic breach cause"
+  },
+  {
+    "id": 38,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Do you have a data retention and deletion policy that is actively enforced?",
+    "weight": "Medium",
+    "fix": "Define retention periods; automate deletion where possible",
+    "why": "Retaining data longer than needed increases breach exposure"
+  },
+  {
+    "id": 39,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Do you know which third-party tools and vendors have access to your data?",
+    "weight": "High",
+    "fix": "OAuth audit in Google Workspace/Microsoft 365 admin",
+    "why": "Third-party access is a hidden and growing supply chain risk"
+  },
+  {
+    "id": 40,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you classify your data by sensitivity level (public, internal, confidential, restricted)?",
+    "weight": "Medium",
+    "fix": "Create a simple data classification policy document",
+    "why": "Classification drives appropriate control decisions"
+  },
+  {
+    "id": 41,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have DLP controls that alert or block when sensitive data is sent externally?",
+    "weight": "Medium",
+    "fix": "Google Workspace DLP, Microsoft Purview, Nightfall AI",
+    "why": "Prevents accidental and intentional data leakage"
+  },
+  {
+    "id": 42,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Are production databases separated from development and test environments?",
+    "weight": "High",
+    "fix": "Never use production data in dev/test; use anonymised data",
+    "why": "Dev environments have weaker controls; don't mix data"
+  },
+  {
+    "id": 43,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have a process for handling customer data requests (GDPR/CCPA access, deletion)?",
+    "weight": "Medium",
+    "fix": "Documented workflow + assigned owner for data requests",
+    "why": "Legal obligation in most jurisdictions; fines for non-compliance"
+  },
+  {
+    "id": 44,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you review third-party integrations that have access to your data at least annually?",
+    "weight": "Medium",
+    "fix": "Audit OAuth tokens; revoke unused integrations",
+    "why": "Abandoned integrations retain access indefinitely"
+  },
+  {
+    "id": 45,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have logging and alerting for unusual data access patterns (e.g. bulk downloads)?",
+    "weight": "Medium",
+    "fix": "CloudTrail, Datadog, or SIEM with anomaly detection",
+    "why": "Insider threats and attackers often exfiltrate data slowly"
+  },
+  {
+    "id": 46,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Are database credentials stored securely \u2014 never hardcoded in code or config files?",
+    "weight": "High",
+    "fix": "AWS Secrets Manager, HashiCorp Vault, or Doppler",
+    "why": "Hardcoded credentials in code repos are a critical vulnerability"
+  },
+  {
+    "id": 47,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have controls preventing sensitive data from being copied to personal or unapproved cloud services?",
+    "weight": "Medium",
+    "fix": "MDM restrictions + DLP + employee policy",
+    "why": "Shadow copy of sensitive data bypasses all your controls"
+  },
+  {
+    "id": 48,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Do you conduct regular data mapping exercises as your product and team evolves?",
+    "weight": "Low",
+    "fix": "Schedule quarterly data mapping reviews",
+    "why": "Data flows change constantly as new tools are adopted"
+  },
+  {
+    "id": 49,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Do you have a formal data breach response procedure including notification steps?",
+    "weight": "High",
+    "fix": "Documented plan with legal counsel review",
+    "why": "Regulatory deadlines for notification are strict (72 hrs GDPR)"
+  },
+  {
+    "id": 50,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Have you reviewed your cloud provider's shared responsibility model and confirmed your obligations?",
+    "weight": "Medium",
+    "fix": "AWS/Azure/GCP shared responsibility documentation review",
+    "why": "Many SMBs wrongly assume cloud provider covers everything"
+  },
+  {
+    "id": 117,
+    "category": "Data & Cloud Security",
+    "level": "Basic",
+    "question": "Are cloud infrastructure accounts (AWS/Azure/GCP) protected with MFA and root account access restricted?",
+    "weight": "High",
+    "fix": "Lock root/global admin; require MFA for all cloud console logins",
+    "why": "Cloud console root access is the master key to your entire infrastructure"
+  },
+  {
+    "id": 118,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have cloud security posture management (CSPM) tooling scanning for misconfigurations?",
+    "weight": "Medium",
+    "fix": "AWS Security Hub, Microsoft Defender for Cloud, Wiz, Lacework",
+    "why": "Misconfiguration is the #1 cause of cloud data breaches"
+  },
+  {
+    "id": 119,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Are cloud IAM roles and service account permissions reviewed and minimised at least quarterly?",
+    "weight": "High",
+    "fix": "AWS IAM Access Analyzer; Azure AD access review",
+    "why": "Cloud over-permissioning is ubiquitous and routinely exploited"
+  },
+  {
+    "id": 120,
+    "category": "Data & Cloud Security",
+    "level": "Deeper",
+    "question": "Do you have immutable, offsite backups that cannot be deleted or encrypted by ransomware?",
+    "weight": "High",
+    "fix": "AWS S3 Object Lock, Azure Immutable Blob, Backblaze B2 with object lock",
+    "why": "Ransomware increasingly targets and deletes backup repositories first"
+  },
+  {
+    "id": 121,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Are your cloud workloads protected at runtime against container escape and kernel exploits?",
+    "weight": "Low",
+    "fix": "Falco (open source), Aqua Security, Sysdig Secure",
+    "why": "Cloud-native attacks targeting container runtimes are increasing"
+  },
+  {
+    "id": 122,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Do you use private endpoints or VPC peering for inter-service communication rather than public internet?",
+    "weight": "Medium",
+    "fix": "AWS PrivateLink, Azure Private Endpoint, GCP VPC Service Controls",
+    "why": "Traffic traversing the public internet is exposed to interception and interception"
+  },
+  {
+    "id": 123,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Have you configured cloud-level threat detection (e.g. AWS GuardDuty, Azure Defender) in all regions?",
+    "weight": "Medium",
+    "fix": "Enable GuardDuty/Defender with alerting to your SIEM",
+    "why": "Cloud threat detection is often disabled by default and costs pennies to run"
+  },
+  {
+    "id": 124,
+    "category": "Data & Cloud Security",
+    "level": "Advanced",
+    "question": "Do you have a process for rotating cloud access keys and certificates before they expire?",
+    "weight": "High",
+    "fix": "Automate rotation via Secrets Manager; alert at 30-day expiry",
+    "why": "Expired or leaked cloud keys are a persistent high-severity risk"
+  },
+  {
+    "id": 51,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Do all staff use a business email domain \u2014 no personal Gmail or Yahoo for work?",
+    "weight": "High",
+    "fix": "Google Workspace or Microsoft 365 Business",
+    "why": "Personal accounts bypass IT control and retention policies"
+  },
+  {
+    "id": 52,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Is your email domain protected against spoofing with SPF, DKIM, and DMARC configured?",
+    "weight": "High",
+    "fix": "Configure DNS records; verify with MXToolbox.com",
+    "why": "Prevents attackers from sending email as your domain"
+  },
+  {
+    "id": 53,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Do you have a firewall between your internal network and the internet?",
+    "weight": "High",
+    "fix": "Business firewall (Cisco Meraki, Fortinet, pfSense)",
+    "why": "Essential perimeter control; default block inbound"
+  },
+  {
+    "id": 54,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Is your corporate Wi-Fi separated from guest Wi-Fi on separate VLANs?",
+    "weight": "Medium",
+    "fix": "Configure VLAN isolation in your router/access point",
+    "why": "Guest devices should never reach internal systems"
+  },
+  {
+    "id": 55,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Do you use a VPN or zero-trust network access (ZTNA) for remote access to internal systems?",
+    "weight": "High",
+    "fix": "Tailscale (easy), Cloudflare Access, Cisco AnyConnect",
+    "why": "Remote access without VPN/ZTNA exposes internal systems"
+  },
+  {
+    "id": 56,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Do you monitor for suspicious login activity and alert on anomalies such as impossible travel?",
+    "weight": "High",
+    "fix": "Enable alerts in Google Workspace, M365, or Okta",
+    "why": "Compromised accounts often show unusual login patterns"
+  },
+  {
+    "id": 57,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Do you have email filtering in place that scans inbound mail for phishing and malicious attachments?",
+    "weight": "High",
+    "fix": "Google Workspace Advanced Protection, Proofpoint Essentials",
+    "why": "Phishing is the #1 breach entry point globally"
+  },
+  {
+    "id": 58,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Is outbound email monitored or filtered to prevent data exfiltration?",
+    "weight": "Medium",
+    "fix": "Google DLP for Gmail, Microsoft Purview for M365",
+    "why": "Email is the most common data exfiltration channel"
+  },
+  {
+    "id": 59,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Do you have DNS filtering in place to block access to known malicious domains?",
+    "weight": "Medium",
+    "fix": "Cloudflare Gateway (free), Cisco Umbrella, DNSFilter",
+    "why": "Blocks malware C2 communications and phishing sites"
+  },
+  {
+    "id": 60,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Are RDP and other remote access services blocked from public internet exposure?",
+    "weight": "High",
+    "fix": "Block port 3389 at firewall; use VPN instead",
+    "why": "Exposed RDP is actively scanned and exploited globally"
+  },
+  {
+    "id": 61,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Do you have network segmentation isolating sensitive systems from general employee access?",
+    "weight": "Medium",
+    "fix": "VLAN segmentation; firewall rules between segments",
+    "why": "Limits lateral movement if attacker gains network access"
+  },
+  {
+    "id": 62,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Do you monitor network traffic for unusual patterns or unexpected external connections?",
+    "weight": "Low",
+    "fix": "IDS/IPS or SIEM with network monitoring",
+    "why": "Detects malware calling home to command-and-control servers"
+  },
+  {
+    "id": 63,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Have you performed an external network scan to identify publicly exposed services in the last 12 months?",
+    "weight": "Medium",
+    "fix": "Shodan, Intruder, or external pen tester",
+    "why": "Know what attackers see before they do"
+  },
+  {
+    "id": 64,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Do you have intrusion detection or prevention capabilities monitoring your network?",
+    "weight": "Low",
+    "fix": "Palo Alto, Snort (open source), or cloud-native IDS",
+    "why": "Signature and anomaly-based detection for network threats"
+  },
+  {
+    "id": 125,
+    "category": "Network & Email Security",
+    "level": "Basic",
+    "question": "Is DMARC configured with a policy of p=quarantine or p=reject (not just p=none)?",
+    "weight": "High",
+    "fix": "Update DNS DMARC record to p=quarantine then p=reject after testing",
+    "why": "p=none provides zero protection; only p=reject stops domain spoofing"
+  },
+  {
+    "id": 126,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Are all internet-facing systems protected by TLS 1.2 or higher with weak cipher suites disabled?",
+    "weight": "High",
+    "fix": "Test with SSL Labs; disable TLS 1.0/1.1 and weak ciphers",
+    "why": "Deprecated TLS versions are exploitable by active network attackers"
+  },
+  {
+    "id": 127,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Do you have a process for identifying and decommissioning unused internet-facing ports and services?",
+    "weight": "High",
+    "fix": "Monthly Shodan/external scan; firewall rule review",
+    "why": "Every unnecessary open port is an attack opportunity"
+  },
+  {
+    "id": 128,
+    "category": "Network & Email Security",
+    "level": "Deeper",
+    "question": "Is your VPN solution monitored for known vulnerabilities and patched within 48 hours of critical CVEs?",
+    "weight": "High",
+    "fix": "Subscribe to vendor CVE alerts; patch VPN appliances as highest priority",
+    "why": "VPN appliances are a primary ransomware group initial access vector"
+  },
+  {
+    "id": 129,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Do you use a Secure Web Gateway (SWG) or cloud proxy to inspect and control outbound employee web traffic?",
+    "weight": "Medium",
+    "fix": "Zscaler Internet Access, Netskope, Cloudflare Gateway",
+    "why": "SWG blocks malware downloads, data exfiltration, and C2 traffic"
+  },
+  {
+    "id": 130,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Do you have email link rewriting and time-of-click URL analysis to catch phishing links that change after delivery?",
+    "weight": "Medium",
+    "fix": "Proofpoint URL Defense, Microsoft Safe Links, Mimecast",
+    "why": "Attackers use benign URLs that redirect to malicious content after email delivery"
+  },
+  {
+    "id": 131,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Is your network architecture zero-trust \u2014 systems authenticate every request rather than trusting network location?",
+    "weight": "Medium",
+    "fix": "Cloudflare Access, Zscaler ZPA, BeyondCorp model",
+    "why": "Traditional VPN perimeter fails once an attacker is inside the network"
+  },
+  {
+    "id": 132,
+    "category": "Network & Email Security",
+    "level": "Advanced",
+    "question": "Do you have BGP route monitoring or ASN alerts to detect DNS hijacking or BGP route injection targeting your domain?",
+    "weight": "Low",
+    "fix": "Cloudflare Radar, Oracle Dyn BGP, or Cisco Umbrella",
+    "why": "DNS/BGP hijacking silently redirects your users to attacker infrastructure"
+  },
+  {
+    "id": 65,
+    "category": "Application & Software Security",
+    "level": "Basic",
+    "question": "Do you maintain an inventory of all software, libraries, and dependencies in your product?",
+    "weight": "High",
+    "fix": "SBOM tools: Syft, OWASP Dependency-Track",
+    "why": "You cannot patch what you don't know you're running"
+  },
+  {
+    "id": 66,
+    "category": "Application & Software Security",
+    "level": "Basic",
+    "question": "Do you have a process for tracking and patching known software vulnerabilities (CVEs) in your stack?",
+    "weight": "High",
+    "fix": "Dependabot (GitHub), Snyk, or OWASP Dependency-Check",
+    "why": "Known CVEs are the most exploited vulnerabilities"
+  },
+  {
+    "id": 67,
+    "category": "Application & Software Security",
+    "level": "Basic",
+    "question": "Are software dependencies scanned for vulnerabilities as part of your development process?",
+    "weight": "High",
+    "fix": "Add Snyk or Dependabot to your CI/CD pipeline",
+    "why": "Catching vulns in CI is far cheaper than in production"
+  },
+  {
+    "id": 68,
+    "category": "Application & Software Security",
+    "level": "Basic",
+    "question": "Do you review code for security vulnerabilities before it goes into production?",
+    "weight": "High",
+    "fix": "SAST tools: Semgrep, SonarCloud, CodeQL (free on GitHub)",
+    "why": "Static analysis catches common vulnerabilities automatically"
+  },
+  {
+    "id": 69,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Are API keys, passwords, and credentials stored in a vault \u2014 never hardcoded in code?",
+    "weight": "High",
+    "fix": "AWS Secrets Manager, HashiCorp Vault, Doppler, Infisical",
+    "why": "Hardcoded secrets are the most common AI/code leak vector"
+  },
+  {
+    "id": 70,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Do you scan code repositories for accidentally committed secrets or credentials?",
+    "weight": "High",
+    "fix": "Trufflehog, GitGuardian, GitHub Secret Scanning",
+    "why": "29M secrets were leaked via public GitHub in 2025 alone"
+  },
+  {
+    "id": 71,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Do you have a process for evaluating the security of open-source libraries before adopting them?",
+    "weight": "Medium",
+    "fix": "Check CVE database, GitHub activity, and maintainership",
+    "why": "Abandoned or malicious packages are a growing supply chain risk"
+  },
+  {
+    "id": 72,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Do you have application-layer logging and alerting for unusual behaviour?",
+    "weight": "Medium",
+    "fix": "Datadog APM, AWS CloudWatch, or self-hosted logging",
+    "why": "Application anomalies are often the first sign of compromise"
+  },
+  {
+    "id": 73,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Are your production applications protected by a web application firewall (WAF)?",
+    "weight": "Medium",
+    "fix": "Cloudflare WAF (easy, affordable), AWS WAF",
+    "why": "WAF blocks OWASP Top 10 attacks like SQL injection and XSS"
+  },
+  {
+    "id": 74,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Do you conduct regular penetration testing or vulnerability assessments of your applications?",
+    "weight": "Medium",
+    "fix": "Annual external pen test; automated scan tools quarterly",
+    "why": "Pen tests find what automated scanners miss"
+  },
+  {
+    "id": 75,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Do you have a software bill of materials (SBOM) documenting all product components and versions?",
+    "weight": "Low",
+    "fix": "Syft, CycloneDX, or SPDX format",
+    "why": "SBOM is becoming a regulatory and enterprise customer requirement"
+  },
+  {
+    "id": 76,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Do you have a vulnerability disclosure or bug bounty program for external security researchers?",
+    "weight": "Low",
+    "fix": "HackerOne, Bugcrowd, or self-hosted responsible disclosure",
+    "why": "External researchers find real vulnerabilities before attackers"
+  },
+  {
+    "id": 133,
+    "category": "Application & Software Security",
+    "level": "Basic",
+    "question": "Is branch protection enabled on your main/production code branches, requiring peer review before merging?",
+    "weight": "High",
+    "fix": "Enable branch protection in GitHub/GitLab with required approvals",
+    "why": "Unreviewed code deployments introduce vulnerabilities and backdoors"
+  },
+  {
+    "id": 134,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Are container images scanned for vulnerabilities before deployment to production?",
+    "weight": "High",
+    "fix": "Trivy, Grype, Snyk Container, or AWS ECR scanning",
+    "why": "Container images frequently contain known vulnerable base OS packages"
+  },
+  {
+    "id": 135,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Do you have runtime application self-protection (RASP) or anomaly detection for your production APIs?",
+    "weight": "Medium",
+    "fix": "Datadog AAP, Contrast Security, or AWS Lambda Insights",
+    "why": "API abuse is the fastest-growing attack surface for SaaS products"
+  },
+  {
+    "id": 136,
+    "category": "Application & Software Security",
+    "level": "Deeper",
+    "question": "Are third-party JavaScript libraries loaded in your web app monitored for supply chain compromise?",
+    "weight": "High",
+    "fix": "Subresource Integrity (SRI) hashes; avoid CDN-loaded third-party scripts",
+    "why": "Magecart and similar attacks inject malicious JS via compromised CDNs"
+  },
+  {
+    "id": 137,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Do your APIs enforce rate limiting, authentication, and input validation on every endpoint?",
+    "weight": "High",
+    "fix": "API gateway (AWS API GW, Kong, Apigee); validate all inputs with schema",
+    "why": "Unauthenticated or rate-unlimited APIs are trivially abused"
+  },
+  {
+    "id": 138,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Have you completed an OWASP Top 10 assessment for your primary customer-facing application?",
+    "weight": "Medium",
+    "fix": "Self-assess using OWASP Top 10 checklist; engage pen tester annually",
+    "why": "OWASP Top 10 covers the most exploited web vulnerability classes"
+  },
+  {
+    "id": 139,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Do you have dynamic application security testing (DAST) running against your staging environment?",
+    "weight": "Medium",
+    "fix": "OWASP ZAP (free), Burp Suite Pro, or StackHawk in CI/CD",
+    "why": "DAST finds runtime issues that static analysis cannot detect"
+  },
+  {
+    "id": 140,
+    "category": "Application & Software Security",
+    "level": "Advanced",
+    "question": "Are cryptographic algorithms in your product restricted to approved modern ciphers (AES-256, SHA-256+, RSA-2048+)?",
+    "weight": "Medium",
+    "fix": "Audit code and config for MD5, SHA-1, DES, or RC4; replace immediately",
+    "why": "Deprecated cryptography is actively breakable by well-resourced attackers"
+  },
+  {
+    "id": 77,
+    "category": "AI & Emerging Technology Security",
+    "level": "Basic",
+    "question": "Do you maintain a list of all AI tools your team uses \u2014 including shadow AI adopted without approval?",
+    "weight": "High",
+    "fix": "Run a self-reporting survey; cross-check browser extensions",
+    "why": "Most companies have 3-5x more AI tools than IT knows about"
+  },
+  {
+    "id": 78,
+    "category": "AI & Emerging Technology Security",
+    "level": "Basic",
+    "question": "Do you have a policy governing what data employees can input into AI tools like ChatGPT or Claude?",
+    "weight": "High",
+    "fix": "Written AI usage policy; include in onboarding and training",
+    "why": "Employees routinely paste sensitive data into AI tools"
+  },
+  {
+    "id": 79,
+    "category": "AI & Emerging Technology Security",
+    "level": "Basic",
+    "question": "Are AI tools that process customer or sensitive data formally reviewed before adoption?",
+    "weight": "High",
+    "fix": "Create a lightweight AI tool intake review checklist",
+    "why": "Unapproved AI tools may train on your data or leak it"
+  },
+  {
+    "id": 80,
+    "category": "AI & Emerging Technology Security",
+    "level": "Basic",
+    "question": "Do you have controls preventing sensitive data from being submitted to external AI services?",
+    "weight": "High",
+    "fix": "DLP rules for AI endpoints; browser extension blockers",
+    "why": "Data sent to AI APIs may be logged, retained, or trained on"
+  },
+  {
+    "id": 81,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "If you use AI agents with access to company systems, are their permissions documented and limited?",
+    "weight": "High",
+    "fix": "Apply least privilege to AI agents as you would human users",
+    "why": "AI agents with excess permissions are an ungoverned insider threat"
+  },
+  {
+    "id": 82,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "Do you have logging and monitoring for AI agent actions \u2014 can you audit what an agent did and when?",
+    "weight": "High",
+    "fix": "Require full audit log before enabling any AI agent",
+    "why": "Ungoverned AI agents are the fastest-growing identity risk in 2026"
+  },
+  {
+    "id": 83,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "Do you have an incident response plan covering AI-specific failures like prompt injection or agent misbehaviour?",
+    "weight": "Medium",
+    "fix": "Add AI failure modes to your existing IR playbooks",
+    "why": "Standard IR playbooks do not cover AI-specific attack vectors"
+  },
+  {
+    "id": 84,
+    "category": "AI & Emerging Technology Security",
+    "level": "Advanced",
+    "question": "Have you assessed the security posture of your AI providers \u2014 do they have SOC 2 or equivalent?",
+    "weight": "Medium",
+    "fix": "Review vendor security pages and request SOC 2 reports",
+    "why": "AI providers handle your queries and sometimes your data"
+  },
+  {
+    "id": 141,
+    "category": "AI & Emerging Technology Security",
+    "level": "Basic",
+    "question": "Do you have an approved list of AI coding assistants and have communicated rules for their use with developers?",
+    "weight": "High",
+    "fix": "Policy covering GitHub Copilot, Cursor, Claude Code \u2014 document what code can be shared",
+    "why": "AI coding tools can leak proprietary algorithms and credentials to external AI providers"
+  },
+  {
+    "id": 142,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "Have you tested your AI-integrated systems for prompt injection vulnerabilities?",
+    "weight": "High",
+    "fix": "Manual red team testing; OWASP LLM Top 10 checklist",
+    "why": "Prompt injection is the most prevalent AI attack vector and trivially exploitable"
+  },
+  {
+    "id": 143,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "Do you have controls preventing AI tools from accessing production databases or customer records directly?",
+    "weight": "High",
+    "fix": "Network segmentation; AI tools access read-only replicas or APIs only",
+    "why": "AI tools with direct DB access can exfiltrate all customer data via carefully crafted queries"
+  },
+  {
+    "id": 144,
+    "category": "AI & Emerging Technology Security",
+    "level": "Deeper",
+    "question": "Are employees trained specifically on AI-powered social engineering attacks (deepfake audio/video, AI phishing)?",
+    "weight": "High",
+    "fix": "Include AI threat scenarios in security awareness training",
+    "why": "AI-generated phishing outperforms human-written phishing by 40% in click rates"
+  },
+  {
+    "id": 145,
+    "category": "AI & Emerging Technology Security",
+    "level": "Advanced",
+    "question": "Do you have a policy governing the use of AI-generated content in customer communications and marketing?",
+    "weight": "Medium",
+    "fix": "Require human review of all AI-generated external communications",
+    "why": "Unreviewed AI content creates legal, reputational, and misinformation risk"
+  },
+  {
+    "id": 146,
+    "category": "AI & Emerging Technology Security",
+    "level": "Advanced",
+    "question": "If you build AI/ML models, do you have controls protecting training data and model weights from exfiltration?",
+    "weight": "High",
+    "fix": "Restrict model access to authorised systems; monitor for bulk export",
+    "why": "Trained model weights represent significant IP and can be exploited by adversaries"
+  },
+  {
+    "id": 147,
+    "category": "AI & Emerging Technology Security",
+    "level": "Advanced",
+    "question": "Have you assessed your exposure to AI model supply chain attacks (e.g. malicious Hugging Face models, poisoned weights)?",
+    "weight": "Medium",
+    "fix": "Use only models from verified sources; hash-verify downloads",
+    "why": "Malicious model weights are an emerging supply chain attack vector"
+  },
+  {
+    "id": 148,
+    "category": "AI & Emerging Technology Security",
+    "level": "Advanced",
+    "question": "Do you have a process for evaluating and governing the use of autonomous AI agents that take actions on behalf of employees?",
+    "weight": "High",
+    "fix": "Require security review before deploying any agentic workflow with write access",
+    "why": "Autonomous agents amplify errors and attacks \u2014 one compromised agent can affect thousands of records"
+  },
+  {
+    "id": 85,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Basic",
+    "question": "Do you have a formal process for evaluating vendor security posture before granting access?",
+    "weight": "High",
+    "fix": "Use a standard security questionnaire (SIG Lite or custom)",
+    "why": "Third parties are responsible for a significant % of breaches"
+  },
+  {
+    "id": 86,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Basic",
+    "question": "Do you require key vendors to provide SOC 2, ISO 27001, or equivalent certification?",
+    "weight": "Medium",
+    "fix": "Request certificates; check trust portals (e.g. security.vendor.com)",
+    "why": "Certification is evidence of sustained security practice"
+  },
+  {
+    "id": 87,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Basic",
+    "question": "Do you maintain a list of all third-party vendors with access to your systems and review it annually?",
+    "weight": "High",
+    "fix": "Vendor register spreadsheet; review at least annually",
+    "why": "Forgotten vendor access accumulates significant risk over time"
+  },
+  {
+    "id": 88,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Basic",
+    "question": "Do vendor contracts include security requirements, data handling, and breach notification clauses?",
+    "weight": "High",
+    "fix": "Have legal counsel review standard vendor contract template",
+    "why": "Without contractual obligations vendors have no accountability"
+  },
+  {
+    "id": 89,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Deeper",
+    "question": "Do you monitor for security incidents affecting your key vendors or software providers?",
+    "weight": "Medium",
+    "fix": "Subscribe to vendor security bulletins; monitor HaveIBeenPwned",
+    "why": "Vendor breaches can silently affect your own security posture"
+  },
+  {
+    "id": 90,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Deeper",
+    "question": "Do you have a process for promptly revoking vendor access if the relationship ends or a breach is suspected?",
+    "weight": "High",
+    "fix": "Include in offboarding checklist; tie to vendor register",
+    "why": "Vendor access without review is equivalent to an open door"
+  },
+  {
+    "id": 91,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Deeper",
+    "question": "Have you assessed the security of your software supply chain \u2014 the open-source libraries your product depends on?",
+    "weight": "Medium",
+    "fix": "Dependabot, Snyk, or OWASP Dependency-Track",
+    "why": "Supply chain attacks via open-source packages are accelerating"
+  },
+  {
+    "id": 92,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Advanced",
+    "question": "Do you have contingency plans if a critical vendor suffers an outage or security incident?",
+    "weight": "Medium",
+    "fix": "Document backup vendors or manual fallback processes",
+    "why": "Third-party downtime caused by attacks can halt your operations"
+  },
+  {
+    "id": 149,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Basic",
+    "question": "Do you check whether your critical SaaS providers have experienced data breaches using breach monitoring services?",
+    "weight": "High",
+    "fix": "HaveIBeenPwned, SpyCloud, or Recorded Future for vendor monitoring",
+    "why": "A breached vendor credential can expose your environment without any action by you"
+  },
+  {
+    "id": 150,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Deeper",
+    "question": "Do you have a tiered vendor risk classification (critical, high, medium, low) driving proportionate oversight?",
+    "weight": "Medium",
+    "fix": "Categorise vendors by data access and business criticality; apply tiered reviews",
+    "why": "Treating all vendors the same wastes resources and leaves critical vendors under-scrutinised"
+  },
+  {
+    "id": 151,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Deeper",
+    "question": "Are you notified automatically when a vendor in your stack discloses a CVE in their product?",
+    "weight": "High",
+    "fix": "Subscribe to vendor CVE feeds; use tools like VulnDB or Feedly security feeds",
+    "why": "Vendor CVEs affecting your deployed versions require rapid response"
+  },
+  {
+    "id": 152,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Advanced",
+    "question": "Have you assessed your exposure to typosquatting attacks on package managers (npm, PyPI, Maven)?",
+    "weight": "Medium",
+    "fix": "Private package mirrors; namespace protection in npm/PyPI",
+    "why": "Attackers publish malicious packages with names one character off legitimate ones"
+  },
+  {
+    "id": 153,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Advanced",
+    "question": "Do your build pipelines verify checksums or signatures of all external dependencies before use?",
+    "weight": "High",
+    "fix": "Sigstore, in-toto attestations, or hash pinning in lock files",
+    "why": "A compromised CDN or package registry can silently modify your build artifacts"
+  },
+  {
+    "id": 154,
+    "category": "Third-Party & Supply Chain Risk",
+    "level": "Advanced",
+    "question": "Is your CI/CD pipeline itself secured \u2014 are pipeline secrets isolated and build agents not shared with untrusted code?",
+    "weight": "High",
+    "fix": "Separate build agents per trust boundary; use OIDC for CI secrets",
+    "why": "Compromised CI/CD can inject malicious code into every release"
+  },
+  {
+    "id": 93,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Do you have a written information security policy reviewed in the last 12 months?",
+    "weight": "High",
+    "fix": "Start with free templates from SANS or CIS",
+    "why": "A policy signals intent and provides legal protection"
+  },
+  {
+    "id": 94,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Have all employees completed security awareness training in the last 12 months?",
+    "weight": "High",
+    "fix": "KnowBe4, Proofpoint PSAT, or free SANS resources",
+    "why": "Human error causes 90%+ of breaches; training is the fix"
+  },
+  {
+    "id": 95,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Do you have a documented incident response plan tested or reviewed in the last year?",
+    "weight": "High",
+    "fix": "Tabletop exercise with leadership team; annual review",
+    "why": "Untested IR plans fail under the stress of a real incident"
+  },
+  {
+    "id": 96,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Do you conduct background checks on employees with access to sensitive data or systems?",
+    "weight": "Medium",
+    "fix": "Background check services: Checkr, Sterling",
+    "why": "Insider threat risk is underestimated in growing companies"
+  },
+  {
+    "id": 97,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Do you have cyber liability insurance and understand what it covers and excludes?",
+    "weight": "High",
+    "fix": "Engage a specialist broker: Coalition, At-Bay, or Chubb",
+    "why": "Cyber insurance is essential but exclusions matter enormously"
+  },
+  {
+    "id": 98,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Do you know your regulatory compliance obligations \u2014 HIPAA, SOC 2, GDPR, PCI DSS, or others?",
+    "weight": "High",
+    "fix": "Consult a compliance advisor for your industry and geography",
+    "why": "Ignorance of requirements does not reduce legal liability"
+  },
+  {
+    "id": 99,
+    "category": "Policies, Governance & Compliance",
+    "level": "Deeper",
+    "question": "Do you run phishing simulations to test whether employees can identify phishing emails?",
+    "weight": "Medium",
+    "fix": "KnowBe4, Proofpoint, or free tools like GoPhish",
+    "why": "Training without testing gives false confidence"
+  },
+  {
+    "id": 100,
+    "category": "Policies, Governance & Compliance",
+    "level": "Deeper",
+    "question": "Do you have a process for employees to report suspicious emails or security concerns \u2014 and is it actively used?",
+    "weight": "High",
+    "fix": "Dedicated email alias + Slack channel + regular reminders",
+    "why": "Under-reporting delays incident response and worsens outcomes"
+  },
+  {
+    "id": 155,
+    "category": "Policies, Governance & Compliance",
+    "level": "Basic",
+    "question": "Is there a named individual responsible for information security decisions in your organisation?",
+    "weight": "High",
+    "fix": "Assign a Security Owner role even if part-time; document it",
+    "why": "Without ownership, security initiatives stall and accountability is absent"
+  },
+  {
+    "id": 156,
+    "category": "Policies, Governance & Compliance",
+    "level": "Deeper",
+    "question": "Do you conduct at least annual tabletop exercises simulating a ransomware or data breach scenario with your leadership team?",
+    "weight": "High",
+    "fix": "Facilitated 2-hour tabletop; use CISA or NCSC scenario templates",
+    "why": "Leadership response during an incident determines outcome; tabletops reveal gaps before they matter"
+  },
+  {
+    "id": 157,
+    "category": "Policies, Governance & Compliance",
+    "level": "Deeper",
+    "question": "Do you have a clear escalation path and communication plan for notifying customers and regulators after a breach?",
+    "weight": "High",
+    "fix": "Pre-draft notification templates; identify regulatory contacts in advance",
+    "why": "Ad-hoc breach communication under pressure leads to compliance failures and reputational damage"
+  },
+  {
+    "id": 158,
+    "category": "Policies, Governance & Compliance",
+    "level": "Deeper",
+    "question": "Are security metrics reported to the board or executive team at least quarterly?",
+    "weight": "Medium",
+    "fix": "Simple KPI dashboard: open threats, compliance score, incidents, training completion",
+    "why": "Security without board visibility is underfunded and deprioritised"
+  },
+  {
+    "id": 159,
+    "category": "Policies, Governance & Compliance",
+    "level": "Advanced",
+    "question": "Have you assessed whether your current security controls meet the requirements of your largest customers or prospects?",
+    "weight": "High",
+    "fix": "Review customer security questionnaires received; map gaps to your controls",
+    "why": "Enterprise customers will not sign contracts without evidence of adequate controls"
+  },
+  {
+    "id": 160,
+    "category": "Policies, Governance & Compliance",
+    "level": "Advanced",
+    "question": "Do you maintain a risk register documenting identified security risks, owners, and accepted/mitigated status?",
+    "weight": "Medium",
+    "fix": "Simple spreadsheet risk register; review quarterly",
+    "why": "A risk register is required by ISO 27001, SOC 2, and most enterprise procurement questionnaires"
+  },
+  {
+    "id": 161,
+    "category": "Ransomware & Business Continuity",
+    "level": "Basic",
+    "question": "Do you have a documented business continuity plan that covers a ransomware or major cyberattack scenario?",
+    "weight": "High",
+    "fix": "NCSC/CISA BCP templates; tabletop to validate",
+    "why": "Ransomware attacks now have a median dwell time of under 24 hours \u2014 plans must exist before the event"
+  },
+  {
+    "id": 162,
+    "category": "Ransomware & Business Continuity",
+    "level": "Basic",
+    "question": "Do you maintain offline or air-gapped backups of your most critical data that are inaccessible to ransomware?",
+    "weight": "High",
+    "fix": "Tape, offline disk, or immutable cloud storage (S3 Object Lock)",
+    "why": "Connected backups are encrypted in 80% of ransomware attacks"
+  },
+  {
+    "id": 163,
+    "category": "Ransomware & Business Continuity",
+    "level": "Basic",
+    "question": "Have you tested restoration from backup within the last 6 months for your most critical systems?",
+    "weight": "High",
+    "fix": "Schedule semi-annual restore test; document recovery time achieved",
+    "why": "Unverified backup recovery times are almost always longer than assumed"
+  },
+  {
+    "id": 164,
+    "category": "Ransomware & Business Continuity",
+    "level": "Basic",
+    "question": "Do you know your Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for each critical system?",
+    "weight": "High",
+    "fix": "Define RTO/RPO per system; validate against backup and DR capability",
+    "why": "Without defined RTOs, recovery prioritisation fails under pressure"
+  },
+  {
+    "id": 165,
+    "category": "Ransomware & Business Continuity",
+    "level": "Basic",
+    "question": "Do you have cyber incident retainer or pre-negotiated support from a cybersecurity incident response firm?",
+    "weight": "High",
+    "fix": "CrowdStrike Services, Mandiant, or regional IR firm retainer",
+    "why": "Finding and engaging an IR firm during an active attack costs hours you cannot afford"
+  },
+  {
+    "id": 166,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Are your backups tested to confirm they are not also encrypted or corrupted by ransomware before relying on them?",
+    "weight": "High",
+    "fix": "Verify backup integrity with checksum validation; use immutable backup storage",
+    "why": "Ransomware increasingly lurks for weeks corrupting backups before triggering encryption"
+  },
+  {
+    "id": 167,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Do you have a communication plan for customers, staff, and press in the event of a ransomware attack?",
+    "weight": "High",
+    "fix": "Pre-draft customer notification email; identify press spokesperson",
+    "why": "Ransomware victims are judged as much on communication quality as on the incident itself"
+  },
+  {
+    "id": 168,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Do you have an out-of-band communication channel (e.g. personal phones, WhatsApp group) for the response team if email is unavailable?",
+    "weight": "High",
+    "fix": "Pre-establish personal contact list for incident team",
+    "why": "Ransomware often locks email and collaboration platforms during an attack"
+  },
+  {
+    "id": 169,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Have you identified which systems, if encrypted, would halt your business entirely \u2014 and do you have a recovery priority list?",
+    "weight": "High",
+    "fix": "Map critical path systems; prioritise ERP, comms, auth, and customer data",
+    "why": "Prioritised recovery saves days of recovery time in a real attack"
+  },
+  {
+    "id": 170,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Do you have a policy decision made on whether you would pay a ransomware demand \u2014 and have you discussed this with legal counsel?",
+    "weight": "High",
+    "fix": "Board-level decision in advance; understand OFAC sanction implications",
+    "why": "Deciding under pressure with lawyers on the phone is extremely costly and slow"
+  },
+  {
+    "id": 171,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Can you continue to pay employees and suppliers if your finance systems are encrypted for 2 weeks?",
+    "weight": "High",
+    "fix": "Maintain offline copy of bank details and payroll; secondary payment method",
+    "why": "Ransomware victims have failed to make payroll; this causes staff attrition mid-crisis"
+  },
+  {
+    "id": 172,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Do you have a documented checklist of all accounts, credentials, and access tokens that need to be rotated after a breach?",
+    "weight": "High",
+    "fix": "Pre-built post-incident credential rotation checklist",
+    "why": "Incomplete credential rotation after an incident leads to re-compromise within weeks"
+  },
+  {
+    "id": 173,
+    "category": "Ransomware & Business Continuity",
+    "level": "Deeper",
+    "question": "Are your backups stored in a separate cloud account or geography that cannot be reached from your production environment?",
+    "weight": "High",
+    "fix": "Cross-account S3 replication; Azure Backup vault in separate subscription",
+    "why": "Single-account backups are wiped in 100% of sophisticated ransomware attacks that reach cloud infra"
+  },
+  {
+    "id": 174,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Have you performed a full DR failover test \u2014 not just a backup restore \u2014 to validate you can run operations from a secondary environment?",
+    "weight": "Medium",
+    "fix": "Annual DR exercise; measure actual RTO against objective",
+    "why": "Backup restoration is necessary but not sufficient; full failover testing is the gold standard"
+  },
+  {
+    "id": 175,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Do you have canary files or honeypot indicators that alert you if ransomware begins encrypting your file shares?",
+    "weight": "Medium",
+    "fix": "Canary tokens (canarytokens.org) in shared drives; EDR honeypot files",
+    "why": "Ransomware canaries provide 10\u201360 minutes of early warning before encryption completes"
+  },
+  {
+    "id": 176,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Is your incident response retainer tested \u2014 have you onboarded your IR firm and shared access credentials with them before an incident?",
+    "weight": "Medium",
+    "fix": "Pre-share access credentials; run a non-emergency contact exercise annually",
+    "why": "Untested retainers add 4-8 hours of friction at the worst possible time"
+  },
+  {
+    "id": 177,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Do you have business interruption insurance that covers revenue loss from a cyber incident?",
+    "weight": "High",
+    "fix": "Confirm cyber policy covers BI loss; many SMB policies exclude it",
+    "why": "BI loss is often the largest financial impact of ransomware, exceeding recovery costs"
+  },
+  {
+    "id": 178,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Have you mapped which regulatory notifications are required and within what timeframes if you suffer a ransomware event?",
+    "weight": "High",
+    "fix": "Australian Privacy Act notifiable breach provisions; sector-specific requirements",
+    "why": "Notification deadlines run from discovery, not from resolution \u2014 you must act while still in crisis"
+  },
+  {
+    "id": 179,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Do you have network segmentation specifically designed to prevent ransomware from spreading beyond its initial point of compromise?",
+    "weight": "High",
+    "fix": "Micro-segmentation; isolate file shares from workstations; block SMB between endpoints",
+    "why": "Flat networks allow ransomware to encrypt all endpoints and shares within minutes"
+  },
+  {
+    "id": 180,
+    "category": "Ransomware & Business Continuity",
+    "level": "Advanced",
+    "question": "Do you have an executive crisis management process separate from your technical IR process, with a dedicated decision-maker?",
+    "weight": "Medium",
+    "fix": "Assign an Incident Commander role; run a leadership tabletop",
+    "why": "Technical IR and executive crisis management must run in parallel but have different decision rights"
+  },
+  {
+    "id": 181,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Is access to your office or workplace restricted to authorised personnel using key cards, PIN, or similar?",
+    "weight": "High",
+    "fix": "Electronic access control (HID, Brivo, Kisi); remove shared keys",
+    "why": "Physical access enables device theft, shoulder surfing, and direct system compromise"
+  },
+  {
+    "id": 182,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Do you have a visitor log and escort policy for non-employees entering areas with sensitive systems?",
+    "weight": "Medium",
+    "fix": "Visitor register; require staff escort in server/IT areas",
+    "why": "Unescorted visitors can physically access systems, plant devices, or observe screens"
+  },
+  {
+    "id": 183,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Are server rooms, network equipment, and storage systems physically secured with restricted access?",
+    "weight": "High",
+    "fix": "Locked cage or room; audit trail of access",
+    "why": "Physical access to servers bypasses all logical security controls"
+  },
+  {
+    "id": 184,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Are employees trained to challenge and report tailgating through secure doors?",
+    "weight": "Medium",
+    "fix": "Include in security awareness training; post signage at access points",
+    "why": "Social engineering via physical tailgating bypasses expensive electronic access control"
+  },
+  {
+    "id": 185,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Do employees use a privacy screen on laptops when working in public places like caf\u00e9s or airports?",
+    "weight": "Medium",
+    "fix": "Issue privacy screens via IT; include in travel security policy",
+    "why": "Visual eavesdropping is low-tech, cheap, and effective \u2014 credentials and data are routinely stolen this way"
+  },
+  {
+    "id": 186,
+    "category": "Physical & Operational Security",
+    "level": "Basic",
+    "question": "Is there a clean desk policy requiring sensitive documents and screens to be secured when unattended?",
+    "weight": "Medium",
+    "fix": "Policy + reminders; include in onboarding",
+    "why": "Unattended documents and unlocked screens are a primary source of physical data exposure"
+  },
+  {
+    "id": 187,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Do you have CCTV covering physical access points to server rooms and sensitive areas?",
+    "weight": "Medium",
+    "fix": "IP cameras with 30-day retention; monitoring alerts",
+    "why": "CCTV deters and provides evidence for physical security incidents"
+  },
+  {
+    "id": 188,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Are physical access logs reviewed at least monthly to identify anomalous entry patterns?",
+    "weight": "Medium",
+    "fix": "Export access control logs; review for after-hours or unusual entries",
+    "why": "Physical access anomalies often precede insider incidents"
+  },
+  {
+    "id": 189,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Do you have a policy and process for securely destroying physical media (paper, hard drives, USB drives) containing sensitive data?",
+    "weight": "High",
+    "fix": "Cross-cut shredder; certified hard drive destruction; document with certificates",
+    "why": "Dumpster diving and drive recovery are real and underestimated attack vectors"
+  },
+  {
+    "id": 190,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Are employees instructed never to plug in unknown USB drives or devices found in the workplace?",
+    "weight": "High",
+    "fix": "Include in security training; cover USB drop attack scenarios",
+    "why": "USB drop attacks have a 45-98% success rate in studies; one plug can compromise an entire network"
+  },
+  {
+    "id": 191,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Do you have a travel security policy covering international travel with company devices to high-risk countries?",
+    "weight": "Medium",
+    "fix": "Loaner devices for high-risk travel; VPN required; customs inspection awareness",
+    "why": "Devices can be legally inspected or covertly compromised at borders in many jurisdictions"
+  },
+  {
+    "id": 192,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Are public-facing network ports (Ethernet jacks in meeting rooms, lobbies) disabled when not in use?",
+    "weight": "Medium",
+    "fix": "Disable unused switch ports via 802.1X or manual disable",
+    "why": "Enabled network ports in accessible areas allow attackers to plug in and access internal network"
+  },
+  {
+    "id": 193,
+    "category": "Physical & Operational Security",
+    "level": "Deeper",
+    "question": "Do you have a process for reporting and responding to suspected physical security breaches (lost key card, forced entry)?",
+    "weight": "High",
+    "fix": "Report to IT/security immediately; revoke lost access credentials within 1 hour",
+    "why": "A lost key card that is not revoked is equivalent to a stolen password that is not changed"
+  },
+  {
+    "id": 194,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Do you have controls to prevent or detect rogue wireless access points or network devices being installed on your premises?",
+    "weight": "Medium",
+    "fix": "Wi-Fi scanning tools; 802.1X network authentication; periodic physical sweeps",
+    "why": "Rogue APs are used for man-in-the-middle attacks and corporate espionage"
+  },
+  {
+    "id": 195,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Are building systems (HVAC, BMS, access control, CCTV) isolated from your IT network and secured separately?",
+    "weight": "Medium",
+    "fix": "OT/IT network segmentation; patch BMS systems on their own schedule",
+    "why": "Compromised building management systems have been used to gain initial network access"
+  },
+  {
+    "id": 196,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Do you have a documented process for maintaining security posture during office moves, renovations, or major facility changes?",
+    "weight": "Low",
+    "fix": "Security checklist for facility transitions; include IT and physical security teams",
+    "why": "Office moves are a common time for access controls to be misconfigured or overlooked"
+  },
+  {
+    "id": 197,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Have you conducted a physical penetration test or red team exercise within the last 2 years?",
+    "weight": "Low",
+    "fix": "Engage a physical pen tester; scope to include social engineering and tailgating",
+    "why": "Physical controls are rarely tested; real gaps are almost always found in first assessment"
+  },
+  {
+    "id": 198,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Do you have an insider threat program that includes behavioural indicators for both physical and digital anomalies?",
+    "weight": "Medium",
+    "fix": "Define insider threat indicators; train managers; create anonymous reporting channel",
+    "why": "Insider threats combine physical and digital actions; isolated detection misses the full picture"
+  },
+  {
+    "id": 199,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Is critical infrastructure (internet uplinks, power supply, cooling) protected against both physical attack and natural disaster?",
+    "weight": "Medium",
+    "fix": "Dual ISP; UPS; colocation backup; generator test annually",
+    "why": "Physical disruption of infrastructure can be used to force failover to less-secure systems"
+  },
+  {
+    "id": 200,
+    "category": "Physical & Operational Security",
+    "level": "Advanced",
+    "question": "Do you have controls preventing employees from working on sensitive data in areas where screens can be recorded by security cameras or external windows?",
+    "weight": "Low",
+    "fix": "Screen orientation policy; privacy screens in open-plan offices; window film",
+    "why": "Surveillance of screens by cameras (including smartphone cameras) is a growing corporate espionage vector"
+  }
+]

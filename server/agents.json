@@ -1,0 +1,98 @@
+[
+  {
+    "id": "threat-hunter",
+    "name": "Threat Hunter",
+    "icon": "🎯",
+    "role": "Continuously scans threat feeds, CVE databases, and connected security tools for new threats matching your environment.",
+    "capabilities": ["CVE correlation against asset inventory", "IOC matching", "Threat feed ingestion", "Dark web credential monitoring"],
+    "triggers": ["New CVE published", "New threat detected in connected EDR", "IOC match in logs"],
+    "outputs": ["Threat alert with severity", "AI recommendation", "Affected assets list"],
+    "status": "active",
+    "last_run": "2 min ago",
+    "runs_today": 847
+  },
+  {
+    "id": "compliance-auditor",
+    "name": "Compliance Auditor",
+    "icon": "📋",
+    "role": "Continuously checks your configuration against compliance frameworks (Essential 8, ISO 27001, SOC 2, PCI DSS) and flags gaps.",
+    "capabilities": ["Control status monitoring", "Evidence collection automation", "Gap analysis", "Framework mapping"],
+    "triggers": ["Configuration change detected", "New control added", "Scheduled daily audit"],
+    "outputs": ["Compliance score delta", "Gap report", "Evidence package"],
+    "status": "active",
+    "last_run": "15 min ago",
+    "runs_today": 96
+  },
+  {
+    "id": "vuln-scanner",
+    "name": "Vulnerability Manager",
+    "icon": "🔬",
+    "role": "Scans your asset inventory for known CVEs, misconfigurations, and software vulnerabilities. Prioritises by exploitability.",
+    "capabilities": ["CVE scoring and prioritisation", "Asset-CVE correlation", "Patch availability check", "EPSS score integration"],
+    "triggers": ["New CVE in NVD", "Asset inventory change", "Weekly scheduled scan"],
+    "outputs": ["Vulnerability report", "Patch priority list", "Remediation runbook"],
+    "status": "active",
+    "last_run": "1 hr ago",
+    "runs_today": 24
+  },
+  {
+    "id": "incident-responder",
+    "name": "Incident Responder",
+    "icon": "🚨",
+    "role": "Automatically generates incident playbooks, tracks phase progression, and drafts stakeholder communications.",
+    "capabilities": ["Playbook generation", "Phase tracking", "Root cause analysis", "Stakeholder communication drafting"],
+    "triggers": ["Incident created", "Phase change", "Escalation threshold exceeded"],
+    "outputs": ["Response playbook", "Timeline", "Board notification draft"],
+    "status": "active",
+    "last_run": "On demand",
+    "runs_today": 3
+  },
+  {
+    "id": "tech-assessor",
+    "name": "Tech Stack Assessor",
+    "icon": "🔧",
+    "role": "Audits your technology stack against EOL databases and security benchmarks. Recommends replacements without vendor engagement.",
+    "capabilities": ["EOL date tracking", "CVE-to-product mapping", "Vendor comparison", "Cost optimisation analysis"],
+    "triggers": ["New EOL announced", "New product added", "Monthly review"],
+    "outputs": ["Refresh priority list", "Vendor comparison matrix", "Cost estimate"],
+    "status": "active",
+    "last_run": "6 hr ago",
+    "runs_today": 4
+  },
+  {
+    "id": "board-reporter",
+    "name": "Board Reporter",
+    "icon": "📊",
+    "role": "Generates executive-ready board reports summarising risk posture, compliance status, and recommended actions.",
+    "capabilities": ["Executive narrative generation", "KPI summarisation", "Risk trend analysis", "Action prioritisation"],
+    "triggers": ["End of quarter", "On demand", "Major incident closed"],
+    "outputs": ["Board deck summary", "Risk score narrative", "Top 5 action items"],
+    "status": "active",
+    "last_run": "On demand",
+    "runs_today": 1
+  },
+  {
+    "id": "vendor-scout",
+    "name": "Vendor Scout",
+    "icon": "🛒",
+    "role": "Analyses your security gaps and recommends the best-fit vendors from 30+ curated products. No sales calls needed.",
+    "capabilities": ["Gap-to-product mapping", "SMB fit scoring", "Price comparison", "Integration compatibility check"],
+    "triggers": ["Assessment gap identified", "New connector category added", "On demand"],
+    "outputs": ["Ranked vendor shortlist", "Decision matrix", "Procurement guide"],
+    "status": "active",
+    "last_run": "On demand",
+    "runs_today": 12
+  },
+  {
+    "id": "posture-scorer",
+    "name": "Posture Scorer",
+    "icon": "📈",
+    "role": "Aggregates data from all agents and connected tools into a single security posture score with trend analysis.",
+    "capabilities": ["Multi-source risk aggregation", "Score trending", "Benchmark comparison", "Improvement simulation"],
+    "triggers": ["Any agent produces output", "Hourly recalculation"],
+    "outputs": ["Live posture score", "Score breakdown by domain", "What-if improvement scenarios"],
+    "status": "active",
+    "last_run": "Continuous",
+    "runs_today": 1440
+  }
+]
