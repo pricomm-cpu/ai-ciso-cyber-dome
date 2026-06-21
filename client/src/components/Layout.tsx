@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import {
   Shield, AlertTriangle, CheckSquare, Cpu, Zap,
   BarChart3, Menu, Bell, ClipboardCheck, Plug, Bot,
-  Users, ShoppingCart
+  Users, ShoppingCart, Newspaper
 } from "lucide-react";
 
 const NAV = [
@@ -18,6 +18,7 @@ const NAV = [
   { path: "/app/agents",      label: "Agent Swarm",       icon: Bot },
   { path: "/app/talent",      label: "Talent Marketplace", icon: Users },
   { path: "/app/procurement", label: "Procurement",        icon: ShoppingCart },
+  { path: "/app/news",        label: "Cyber Intelligence",  icon: Newspaper },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -699,6 +699,66 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* ── CYBER INTELLIGENCE ───────────────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary text-[11px] text-muted-foreground mb-4">
+            <RefreshCw size={11} className="text-cyan-400 animate-spin [animation-duration:3s]" /> Live Intelligence Feed
+          </div>
+          <h2 className="text-3xl font-bold text-foreground mb-3">
+            Local. Regional. Global.{" "}
+            <span className="text-cyan-400">Always current.</span>
+          </h2>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+            Real-time cybersecurity incidents, breach reports, and threat intelligence scoped to AU/NZ, APAC, and globally — with AI-curated CISO takeaways on every item.
+          </p>
+        </div>
+
+        {/* Scope pills */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          {[
+            { flag: "🇦🇺", scope: "Local — AU / NZ",    items: 7, critical: 2, desc: "ACSC incidents, ASIC penalties, state school breaches, NZ Privacy Commissioner rulings" },
+            { flag: "🌏", scope: "Regional — APAC",     items: 6, critical: 2, desc: "Oracle PeopleSoft zero-day, China-linked espionage, APAC data leak surge +143%" },
+            { flag: "🌐", scope: "Global",              items: 8, critical: 2, desc: "Verizon DBIR, RoguePlanet Defender zero-day, EDR killer tooling, INC Ransomware 830+ victims" },
+          ].map(({ flag, scope, items, critical, desc }) => (
+            <div key={scope} className="glow-card rounded-xl p-5 flex flex-col gap-2.5">
+              <div className="flex items-center justify-between">
+                <div className="text-sm font-bold text-foreground">{flag}  {scope}</div>
+                {critical > 0 && <span className="text-[10px] px-1.5 py-0.5 rounded border font-bold text-red-400 bg-red-500/10 border-red-500/30">{critical} CRITICAL</span>}
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              <div className="text-[10px] text-muted-foreground">{items} items this week</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Latest headlines strip */}
+        <div className="space-y-2 mb-8">
+          {[
+            { sev: "CRITICAL", scope: "AU",     text: "Mackay Sugar mills shut down by 'The Gentlemen' ransomware group",                          date: "18 Jun" },
+            { sev: "CRITICAL", scope: "Global", text: "Microsoft RoguePlanet zero-day CVE-2026-50656 in Windows Defender — patch in development", date: "19 Jun" },
+            { sev: "HIGH",     scope: "APAC",   text: "Oracle PeopleSoft CVE-2026-35273 (CVSS 9.8) exploited across APAC universities",            date: "8 Jun"  },
+            { sev: "HIGH",     scope: "AU",     text: "VentraIP 600Gbps+ DDoS — 300,000 customers offline for 7 hours",                            date: "23 May" },
+            { sev: "HIGH",     scope: "NZ",     text: "Manage My Health: 99,000 patient records stolen, Privacy Commissioner finds systemic failures",date: "27 May"},
+          ].map(({ sev, scope, text, date }) => (
+            <div key={text} className="flex items-start gap-3 px-4 py-3 rounded-lg border border-border bg-card/60 hover:border-border/80 transition-colors">
+              <span className={`text-[10px] px-1.5 py-0.5 rounded border font-bold flex-shrink-0 mt-0.5 ${sev === "CRITICAL" ? "text-red-400 bg-red-500/10 border-red-500/30" : "text-orange-400 bg-orange-500/10 border-orange-500/30"}`}>{sev}</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary border border-border text-muted-foreground flex-shrink-0 mt-0.5">{scope}</span>
+              <span className="text-xs text-foreground/80 flex-1 leading-snug">{text}</span>
+              <span className="text-[10px] text-muted-foreground flex-shrink-0 mt-0.5">{date}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link href="/app#/news">
+            <a className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium group">
+              View full intelligence feed <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </Link>
+        </div>
+      </section>
+
       {/* ── PRICING TEASER ───────────────────────────────────────────────── */}
       <section id="pricing" className="max-w-6xl mx-auto px-6 py-24">
         <div className="text-center mb-14">

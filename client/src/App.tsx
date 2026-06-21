@@ -16,6 +16,7 @@ import Connectors from "@/pages/Connectors";
 import Agents from "@/pages/Agents";
 import TalentMarketplace from "@/pages/TalentMarketplace";
 import Procurement from "@/pages/Procurement";
+import CyberNews from "@/pages/CyberNews";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -63,6 +64,9 @@ function App() {
           </Route>
           <Route path="/app/procurement">
             {() => <Layout><Procurement /></Layout>}
+          </Route>
+          <Route path="/app/news">
+            {() => <Layout><CyberNews /></Layout>}
           </Route>
 
           <Route component={NotFound} />
