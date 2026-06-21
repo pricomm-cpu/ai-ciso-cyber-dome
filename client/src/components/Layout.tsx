@@ -6,15 +6,15 @@ import {
 } from "lucide-react";
 
 const NAV = [
-  { path: "/",             label: "Command Centre",   icon: BarChart3 },
-  { path: "/threats",      label: "Threat Monitor",   icon: AlertTriangle },
-  { path: "/compliance",   label: "Compliance",       icon: CheckSquare },
-  { path: "/tech-stack",   label: "Tech Stack",       icon: Cpu },
-  { path: "/incidents",    label: "Incidents",        icon: Zap },
-  { path: "/assessment",   label: "Posture Assessment", icon: ClipboardCheck },
-  { path: "/board-report", label: "Board Report",     icon: BarChart3 },
-  { path: "/connectors",   label: "Connectors",        icon: Plug },
-  { path: "/agents",       label: "Agent Swarm",       icon: Bot },
+  { path: "/app",             label: "Command Centre",    icon: BarChart3 },
+  { path: "/app/threats",     label: "Threat Monitor",    icon: AlertTriangle },
+  { path: "/app/compliance",  label: "Compliance",        icon: CheckSquare },
+  { path: "/app/tech-stack",  label: "Tech Stack",        icon: Cpu },
+  { path: "/app/incidents",   label: "Incidents",         icon: Zap },
+  { path: "/app/assessment",  label: "Posture Assessment", icon: ClipboardCheck },
+  { path: "/app/board-report",label: "Board Report",      icon: BarChart3 },
+  { path: "/app/connectors",  label: "Connectors",        icon: Plug },
+  { path: "/app/agents",      label: "Agent Swarm",       icon: Bot },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

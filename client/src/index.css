@@ -182,6 +182,16 @@
   pointer-events: none;
 }
 
+/* ── Connector ticker scroll animations ────────────────────────────────────── */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 /* ── Risk score ring ───────────────────────────────────────────────────────── */
 .risk-ring {
   stroke-dasharray: 251.2;

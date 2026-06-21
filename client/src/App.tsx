@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import Layout from "@/components/Layout";
+import Landing from "@/pages/Landing";
 import Dashboard from "@/pages/Dashboard";
 import Threats from "@/pages/Threats";
 import Compliance from "@/pages/Compliance";
@@ -19,20 +20,45 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router hook={useHashLocation}>
-        <Layout>
-          <Switch>
-            <Route path="/" component={Dashboard} />
-            <Route path="/threats" component={Threats} />
-            <Route path="/compliance" component={Compliance} />
-            <Route path="/tech-stack" component={TechStack} />
-            <Route path="/incidents" component={Incidents} />
-            <Route path="/board-report" component={BoardReport} />
-            <Route path="/assessment" component={Assessment} />
-            <Route path="/connectors" component={Connectors} />
-            <Route path="/agents" component={Agents} />
-            <Route component={NotFound} />
-          </Switch>
-        </Layout>
+        <Switch>
+          {/* Landing page — no Layout wrapper */}
+          <Route path="/" component={Landing} />
+
+          {/* Platform app — all routes under /app prefixed paths wrapped in Layout */}
+          <Route path="/app">
+            {() => (
+              <Layout>
+                <Dashboard />
+              </Layout>
+            )}
+          </Route>
+          <Route path="/app/threats">
+            {() => <Layout><Threats /></Layout>}
+          </Route>
+          <Route path="/app/compliance">
+            {() => <Layout><Compliance /></Layout>}
+          </Route>
+          <Route path="/app/tech-stack">
+            {() => <Layout><TechStack /></Layout>}
+          </Route>
+          <Route path="/app/incidents">
+            {() => <Layout><Incidents /></Layout>}
+          </Route>
+          <Route path="/app/board-report">
+            {() => <Layout><BoardReport /></Layout>}
+          </Route>
+          <Route path="/app/assessment">
+            {() => <Layout><Assessment /></Layout>}
+          </Route>
+          <Route path="/app/connectors">
+            {() => <Layout><Connectors /></Layout>}
+          </Route>
+          <Route path="/app/agents">
+            {() => <Layout><Agents /></Layout>}
+          </Route>
+
+          <Route component={NotFound} />
+        </Switch>
       </Router>
       <Toaster />
     </QueryClientProvider>
