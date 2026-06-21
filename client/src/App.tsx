@@ -17,6 +17,7 @@ import Agents from "@/pages/Agents";
 import TalentMarketplace from "@/pages/TalentMarketplace";
 import Procurement from "@/pages/Procurement";
 import CyberNews from "@/pages/CyberNews";
+import ThreatIngestion from "@/pages/ThreatIngestion";
 import NotFound from "@/pages/not-found";
 
 function App() {
