@@ -125,7 +125,7 @@ class SqliteStorage implements IStorage {
 function seedIfEmpty() {
   if (db.select().from(organisations).all().length > 0) return;
   const now = new Date().toISOString();
-  const org = db.insert(organisations).values({ name: "Acme Technologies Pty Ltd", industry: "Technology", size: "51-200", createdAt: now }).returning().get();
+  const org = db.insert(organisations).values({ name: "Your Company", industry: "Technology", size: "51-200", createdAt: now }).returning().get();
   const oid = org.id;
 
   const threatData = [
