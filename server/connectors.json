@@ -9,9 +9,22 @@
     "smb_fit": "Medium",
     "pricing": "~$8–15/endpoint/month",
     "description": "Industry-leading EDR with threat intelligence and managed detection. Best for companies needing top-tier endpoint protection.",
-    "strengths": ["Best-in-class threat detection", "Threat intelligence built-in", "Low performance impact", "1-click isolation"],
-    "weaknesses": ["Expensive for small teams", "Complex admin console"],
-    "integrates_with": ["splunk", "microsoft-sentinel", "pagerduty", "servicenow"],
+    "strengths": [
+      "Best-in-class threat detection",
+      "Threat intelligence built-in",
+      "Low performance impact",
+      "1-click isolation"
+    ],
+    "weaknesses": [
+      "Expensive for small teams",
+      "Complex admin console"
+    ],
+    "integrates_with": [
+      "splunk",
+      "microsoft-sentinel",
+      "pagerduty",
+      "servicenow"
+    ],
     "api_docs": "https://falcon.crowdstrike.com/documentation/page/a2a7fc0e/crowdstrike-oauth2-based-apis",
     "auth_type": "OAuth2",
     "ai_verdict": "Best-in-class EDR. Recommended if budget allows. Overkill for <20 endpoints.",
@@ -28,9 +41,21 @@
     "smb_fit": "High",
     "pricing": "~$6–12/endpoint/month",
     "description": "Autonomous AI-driven EDR with rollback capability. Strong SMB fit with simpler pricing.",
-    "strengths": ["Autonomous response", "Ransomware rollback", "Simpler than CrowdStrike", "Good SMB pricing"],
-    "weaknesses": ["Smaller threat intel network", "Less mature threat hunting"],
-    "integrates_with": ["splunk", "microsoft-sentinel", "slack"],
+    "strengths": [
+      "Autonomous response",
+      "Ransomware rollback",
+      "Simpler than CrowdStrike",
+      "Good SMB pricing"
+    ],
+    "weaknesses": [
+      "Smaller threat intel network",
+      "Less mature threat hunting"
+    ],
+    "integrates_with": [
+      "splunk",
+      "microsoft-sentinel",
+      "slack"
+    ],
     "api_docs": "https://usea1.sentinelone.net/api-doc/overview",
     "auth_type": "API Key",
     "ai_verdict": "Best EDR value for SMBs. Rollback feature is a ransomware lifesaver.",
@@ -47,9 +72,20 @@
     "smb_fit": "High",
     "pricing": "Included in M365 Business Premium (~$22/user/month)",
     "description": "Built-in EDR for Microsoft 365 users. Zero extra cost if you already run M365 Business Premium.",
-    "strengths": ["Zero extra cost with M365 BP", "Deep Windows integration", "Easy management via Intune"],
-    "weaknesses": ["Weaker on macOS/Linux", "Slower threat detection than CrowdStrike/S1"],
-    "integrates_with": ["microsoft-sentinel", "intune", "azure-ad"],
+    "strengths": [
+      "Zero extra cost with M365 BP",
+      "Deep Windows integration",
+      "Easy management via Intune"
+    ],
+    "weaknesses": [
+      "Weaker on macOS/Linux",
+      "Slower threat detection than CrowdStrike/S1"
+    ],
+    "integrates_with": [
+      "microsoft-sentinel",
+      "intune",
+      "azure-ad"
+    ],
     "api_docs": "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/apis-intro",
     "auth_type": "OAuth2 / Azure AD",
     "ai_verdict": "Best choice if already on M365. Free EDR that beats most paid alternatives for SMBs.",
@@ -66,9 +102,22 @@
     "smb_fit": "High",
     "pricing": "~$3–7/user/month",
     "description": "Leading cloud-native identity platform. SSO, MFA, lifecycle management, and conditional access.",
-    "strengths": ["Easiest SSO to deploy", "7,000+ app integrations", "Strong MFA options", "Great admin UX"],
-    "weaknesses": ["Can get expensive at scale", "Some advanced features require add-ons"],
-    "integrates_with": ["crowdstrike-falcon", "splunk", "pagerduty", "slack"],
+    "strengths": [
+      "Easiest SSO to deploy",
+      "7,000+ app integrations",
+      "Strong MFA options",
+      "Great admin UX"
+    ],
+    "weaknesses": [
+      "Can get expensive at scale",
+      "Some advanced features require add-ons"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "splunk",
+      "pagerduty",
+      "slack"
+    ],
     "api_docs": "https://developer.okta.com/docs/reference/",
     "auth_type": "OAuth2 / OIDC",
     "ai_verdict": "Best SSO/IdP for SMBs. Start here if you have no identity platform.",
@@ -85,9 +134,20 @@
     "smb_fit": "High",
     "pricing": "Included in M365 / Azure subscription",
     "description": "Microsoft's identity platform. Dominant in Windows-heavy environments. Conditional access, PIM, SSPR.",
-    "strengths": ["Bundled with M365", "Deep Windows/Office integration", "Conditional Access policies"],
-    "weaknesses": ["Confusing licensing tiers", "Less intuitive than Okta for non-MS stacks"],
-    "integrates_with": ["microsoft-defender", "intune", "microsoft-sentinel"],
+    "strengths": [
+      "Bundled with M365",
+      "Deep Windows/Office integration",
+      "Conditional Access policies"
+    ],
+    "weaknesses": [
+      "Confusing licensing tiers",
+      "Less intuitive than Okta for non-MS stacks"
+    ],
+    "integrates_with": [
+      "microsoft-defender",
+      "intune",
+      "microsoft-sentinel"
+    ],
     "api_docs": "https://learn.microsoft.com/en-us/graph/api/overview",
     "auth_type": "OAuth2 / Azure AD",
     "ai_verdict": "Use if you're Microsoft-first. Equivalent to Okta but bundled — no extra cost.",
@@ -104,9 +164,20 @@
     "smb_fit": "High",
     "pricing": "$4/user/month",
     "description": "Best-in-class team password manager with admin console, travel mode, and SSO integration.",
-    "strengths": ["Excellent UX", "Travel mode for border crossing", "Watchtower breach monitoring", "Easy admin"],
-    "weaknesses": ["No free tier", "Less enterprise governance than CyberArk"],
-    "integrates_with": ["okta", "azure-ad"],
+    "strengths": [
+      "Excellent UX",
+      "Travel mode for border crossing",
+      "Watchtower breach monitoring",
+      "Easy admin"
+    ],
+    "weaknesses": [
+      "No free tier",
+      "Less enterprise governance than CyberArk"
+    ],
+    "integrates_with": [
+      "okta",
+      "azure-ad"
+    ],
     "api_docs": "https://developer.1password.com/docs/connect",
     "auth_type": "Service Account Token",
     "ai_verdict": "Best password manager for SMBs. Deploy company-wide in 1 day.",
@@ -123,9 +194,23 @@
     "smb_fit": "Medium",
     "pricing": "Pay-per-GB ingested (~$2.46/GB)",
     "description": "Cloud-native SIEM built on Azure. AI-driven threat detection, automation via playbooks, and broad connector library.",
-    "strengths": ["150+ connectors", "AI UEBA built-in", "Scales well", "SOAR via Logic Apps"],
-    "weaknesses": ["Complex pricing", "Learning curve", "Requires Azure knowledge"],
-    "integrates_with": ["microsoft-defender", "azure-ad", "crowdstrike-falcon", "palo-alto"],
+    "strengths": [
+      "150+ connectors",
+      "AI UEBA built-in",
+      "Scales well",
+      "SOAR via Logic Apps"
+    ],
+    "weaknesses": [
+      "Complex pricing",
+      "Learning curve",
+      "Requires Azure knowledge"
+    ],
+    "integrates_with": [
+      "microsoft-defender",
+      "azure-ad",
+      "crowdstrike-falcon",
+      "palo-alto"
+    ],
     "api_docs": "https://learn.microsoft.com/en-us/azure/sentinel/",
     "auth_type": "OAuth2 / Azure AD",
     "ai_verdict": "Best SIEM if already on Azure. Cost can surprise — set data caps on day 1.",
@@ -142,9 +227,22 @@
     "smb_fit": "Low",
     "pricing": "~$150K+/year for enterprise",
     "description": "The legacy SIEM leader. Powerful but expensive and complex. Better suited to large organisations.",
-    "strengths": ["Most powerful query language (SPL)", "Massive ecosystem", "Excellent dashboards"],
-    "weaknesses": ["Very expensive", "Requires dedicated admin", "Complex to tune"],
-    "integrates_with": ["crowdstrike-falcon", "okta", "palo-alto", "tenable"],
+    "strengths": [
+      "Most powerful query language (SPL)",
+      "Massive ecosystem",
+      "Excellent dashboards"
+    ],
+    "weaknesses": [
+      "Very expensive",
+      "Requires dedicated admin",
+      "Complex to tune"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "okta",
+      "palo-alto",
+      "tenable"
+    ],
     "api_docs": "https://docs.splunk.com/Documentation/Splunk/latest/RESTREF/RESTprolog",
     "auth_type": "API Token / OAuth2",
     "ai_verdict": "Avoid for SMBs. Splunk Free is viable up to 500MB/day — after that, costs spiral.",
@@ -161,9 +259,21 @@
     "smb_fit": "Medium",
     "pricing": "Free open-source; $95/month cloud managed",
     "description": "Open-source SIEM with strong detection rules library. Cost-effective alternative to Splunk.",
-    "strengths": ["Open source / free tier", "Fast search", "Good detection rules", "Kubernetes-native"],
-    "weaknesses": ["Requires ops expertise to self-host", "Less polished than Sentinel"],
-    "integrates_with": ["crowdstrike-falcon", "okta", "aws-guardduty"],
+    "strengths": [
+      "Open source / free tier",
+      "Fast search",
+      "Good detection rules",
+      "Kubernetes-native"
+    ],
+    "weaknesses": [
+      "Requires ops expertise to self-host",
+      "Less polished than Sentinel"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "okta",
+      "aws-guardduty"
+    ],
     "api_docs": "https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html",
     "auth_type": "API Key",
     "ai_verdict": "Best value SIEM for tech-savvy SMBs. Self-hosted is free; cloud tier is affordable.",
@@ -180,9 +290,21 @@
     "smb_fit": "High",
     "pricing": "~$1–4/month per account (pay-per-event)",
     "description": "AWS-native intelligent threat detection. Analyses CloudTrail, VPC flow logs, and DNS logs automatically.",
-    "strengths": ["Zero infrastructure", "Always-on", "Covers all AWS regions", "Cheap"],
-    "weaknesses": ["AWS-only", "Needs tuning to reduce false positives"],
-    "integrates_with": ["microsoft-sentinel", "elastic-siem", "pagerduty"],
+    "strengths": [
+      "Zero infrastructure",
+      "Always-on",
+      "Covers all AWS regions",
+      "Cheap"
+    ],
+    "weaknesses": [
+      "AWS-only",
+      "Needs tuning to reduce false positives"
+    ],
+    "integrates_with": [
+      "microsoft-sentinel",
+      "elastic-siem",
+      "pagerduty"
+    ],
     "api_docs": "https://docs.aws.amazon.com/guardduty/latest/APIReference/Welcome.html",
     "auth_type": "AWS IAM",
     "ai_verdict": "Enable immediately if you use AWS. Cheapest threat detection available.",
@@ -199,9 +321,21 @@
     "smb_fit": "Low",
     "pricing": "~$25–50/endpoint/month",
     "description": "Full XDR platform integrating endpoint, network, and cloud telemetry into unified detection.",
-    "strengths": ["Best XDR correlation engine", "Network + endpoint + cloud in one", "UEBA included"],
-    "weaknesses": ["Very expensive", "Requires dedicated SOC analyst", "Complex to deploy"],
-    "integrates_with": ["splunk", "microsoft-sentinel", "servicenow"],
+    "strengths": [
+      "Best XDR correlation engine",
+      "Network + endpoint + cloud in one",
+      "UEBA included"
+    ],
+    "weaknesses": [
+      "Very expensive",
+      "Requires dedicated SOC analyst",
+      "Complex to deploy"
+    ],
+    "integrates_with": [
+      "splunk",
+      "microsoft-sentinel",
+      "servicenow"
+    ],
     "api_docs": "https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference",
     "auth_type": "API Key",
     "ai_verdict": "Enterprise-grade. Overkill for most SMBs. Consider when you have a dedicated security team.",
@@ -218,9 +352,22 @@
     "smb_fit": "High",
     "pricing": "Nessus Essentials: Free (16 IPs); Tenable.io: ~$3K/year",
     "description": "Industry-leading vulnerability scanner. Nessus Essentials is free and covers most SMB needs.",
-    "strengths": ["Most accurate scanner", "Largest plugin library", "Excellent reporting", "Free tier viable"],
-    "weaknesses": ["Credentialed scans need agent or credentials", "Full version expensive"],
-    "integrates_with": ["splunk", "microsoft-sentinel", "servicenow", "jira"],
+    "strengths": [
+      "Most accurate scanner",
+      "Largest plugin library",
+      "Excellent reporting",
+      "Free tier viable"
+    ],
+    "weaknesses": [
+      "Credentialed scans need agent or credentials",
+      "Full version expensive"
+    ],
+    "integrates_with": [
+      "splunk",
+      "microsoft-sentinel",
+      "servicenow",
+      "jira"
+    ],
     "api_docs": "https://developer.tenable.com/reference/navigate",
     "auth_type": "API Key",
     "ai_verdict": "Start with Nessus Essentials (free). Upgrade to .io when you exceed 16 IPs.",
@@ -237,9 +384,21 @@
     "smb_fit": "High",
     "pricing": "$101–239/month",
     "description": "Automated external vulnerability scanner purpose-built for SMBs. Alerts on new CVEs affecting your stack.",
-    "strengths": ["SMB-focused UX", "Continuous external scanning", "CVE alerts", "No expertise required"],
-    "weaknesses": ["External scan only", "Less powerful than Tenable for internal scanning"],
-    "integrates_with": ["slack", "jira", "pagerduty"],
+    "strengths": [
+      "SMB-focused UX",
+      "Continuous external scanning",
+      "CVE alerts",
+      "No expertise required"
+    ],
+    "weaknesses": [
+      "External scan only",
+      "Less powerful than Tenable for internal scanning"
+    ],
+    "integrates_with": [
+      "slack",
+      "jira",
+      "pagerduty"
+    ],
     "api_docs": "https://developers.intruder.io/docs",
     "auth_type": "API Key",
     "ai_verdict": "Best vulnerability scanner for SMBs with no security team. Plug-and-play.",
@@ -256,9 +415,22 @@
     "smb_fit": "High",
     "pricing": "Free tier; Team: $25/developer/month",
     "description": "Developer-first security scanning for open-source dependencies, containers, IaC, and code.",
-    "strengths": ["Developer UX is excellent", "Broad language coverage", "GitHub/GitLab native", "Free tier generous"],
-    "weaknesses": ["Can produce many low-priority findings", "SAST less powerful than Semgrep"],
-    "integrates_with": ["github", "gitlab", "jira", "slack"],
+    "strengths": [
+      "Developer UX is excellent",
+      "Broad language coverage",
+      "GitHub/GitLab native",
+      "Free tier generous"
+    ],
+    "weaknesses": [
+      "Can produce many low-priority findings",
+      "SAST less powerful than Semgrep"
+    ],
+    "integrates_with": [
+      "github",
+      "gitlab",
+      "jira",
+      "slack"
+    ],
     "api_docs": "https://apidocs.snyk.io/",
     "auth_type": "API Token",
     "ai_verdict": "Best AppSec tool for developer teams. Free tier covers most SMBs.",
@@ -275,9 +447,22 @@
     "smb_fit": "High",
     "pricing": "Free open-source; Team: $40/dev/month",
     "description": "Fast open-source SAST with 2,500+ rules. Runs in CI and catches security bugs before merge.",
-    "strengths": ["Fast", "Open-source rules", "Low false positives", "Easy CI integration"],
-    "weaknesses": ["Rules require maintenance", "Less SCA than Snyk"],
-    "integrates_with": ["github", "gitlab", "slack", "jira"],
+    "strengths": [
+      "Fast",
+      "Open-source rules",
+      "Low false positives",
+      "Easy CI integration"
+    ],
+    "weaknesses": [
+      "Rules require maintenance",
+      "Less SCA than Snyk"
+    ],
+    "integrates_with": [
+      "github",
+      "gitlab",
+      "slack",
+      "jira"
+    ],
     "api_docs": "https://semgrep.dev/api/v1/docs/",
     "auth_type": "API Token",
     "ai_verdict": "Best SAST for developers. Pair with Snyk for full coverage.",
@@ -294,9 +479,21 @@
     "smb_fit": "High",
     "pricing": "Free for up to 50 users; $7/user/month Teams",
     "description": "DNS filtering and Secure Web Gateway. Blocks malicious domains, phishing, and malware downloads.",
-    "strengths": ["Free tier is generous", "Easiest to deploy", "Fast global network", "Zero Trust bundle available"],
-    "weaknesses": ["Basic reporting on free tier", "Less feature-rich than Zscaler"],
-    "integrates_with": ["okta", "azure-ad", "splunk"],
+    "strengths": [
+      "Free tier is generous",
+      "Easiest to deploy",
+      "Fast global network",
+      "Zero Trust bundle available"
+    ],
+    "weaknesses": [
+      "Basic reporting on free tier",
+      "Less feature-rich than Zscaler"
+    ],
+    "integrates_with": [
+      "okta",
+      "azure-ad",
+      "splunk"
+    ],
     "api_docs": "https://developers.cloudflare.com/api/",
     "auth_type": "API Token",
     "ai_verdict": "Enable immediately — free and prevents 60%+ of web-based threats with 5 minutes of setup.",
@@ -313,9 +510,21 @@
     "smb_fit": "High",
     "pricing": "$3–8/user/month",
     "description": "Purpose-built email security for SMBs. Phishing protection, malware blocking, BEC defence.",
-    "strengths": ["Best anti-phishing for SMBs", "Easy to deploy", "Security awareness training included", "Good BEC protection"],
-    "weaknesses": ["Less powerful than enterprise Proofpoint", "UI dated"],
-    "integrates_with": ["microsoft-365", "google-workspace", "splunk"],
+    "strengths": [
+      "Best anti-phishing for SMBs",
+      "Easy to deploy",
+      "Security awareness training included",
+      "Good BEC protection"
+    ],
+    "weaknesses": [
+      "Less powerful than enterprise Proofpoint",
+      "UI dated"
+    ],
+    "integrates_with": [
+      "microsoft-365",
+      "google-workspace",
+      "splunk"
+    ],
     "api_docs": "https://help.proofpoint.com/Proofpoint_Essentials/API_Documentation",
     "auth_type": "API Key",
     "ai_verdict": "Best email security for SMBs if not on M365 Defender. Pairs well with Google Workspace.",
@@ -332,9 +541,22 @@
     "smb_fit": "High",
     "pricing": "$20–45/user/year",
     "description": "Market-leading security awareness training and phishing simulation. Largest SMB install base globally.",
-    "strengths": ["Largest phishing template library", "Automated training workflows", "Good reporting", "Easy to use"],
-    "weaknesses": ["Content quality varies", "Interface can be dated"],
-    "integrates_with": ["okta", "azure-ad", "slack", "microsoft-teams"],
+    "strengths": [
+      "Largest phishing template library",
+      "Automated training workflows",
+      "Good reporting",
+      "Easy to use"
+    ],
+    "weaknesses": [
+      "Content quality varies",
+      "Interface can be dated"
+    ],
+    "integrates_with": [
+      "okta",
+      "azure-ad",
+      "slack",
+      "microsoft-teams"
+    ],
     "api_docs": "https://developer.knowbe4.com/",
     "auth_type": "API Key",
     "ai_verdict": "Best security awareness platform. Most SMBs should run monthly phishing simulations.",
@@ -351,9 +573,24 @@
     "smb_fit": "High",
     "pricing": "~$800–2,000/month",
     "description": "Automated compliance platform for SOC 2, ISO 27001, HIPAA, PCI DSS, and GDPR. Continuous control monitoring.",
-    "strengths": ["Fast to SOC 2 (weeks not months)", "150+ integrations", "Evidence collection automated", "Audit-ready reports"],
-    "weaknesses": ["Expensive", "Audit fees not included", "Some controls still require manual evidence"],
-    "integrates_with": ["okta", "aws-guardduty", "github", "crowdstrike-falcon", "snyk"],
+    "strengths": [
+      "Fast to SOC 2 (weeks not months)",
+      "150+ integrations",
+      "Evidence collection automated",
+      "Audit-ready reports"
+    ],
+    "weaknesses": [
+      "Expensive",
+      "Audit fees not included",
+      "Some controls still require manual evidence"
+    ],
+    "integrates_with": [
+      "okta",
+      "aws-guardduty",
+      "github",
+      "crowdstrike-falcon",
+      "snyk"
+    ],
     "api_docs": "https://developer.vanta.com/",
     "auth_type": "OAuth2",
     "ai_verdict": "Best compliance automation. Pays for itself if a single enterprise deal requires SOC 2.",
@@ -370,9 +607,21 @@
     "smb_fit": "High",
     "pricing": "~$10K–20K/year",
     "description": "Automated compliance for SOC 2, ISO 27001, HIPAA. Continuous monitoring and evidence collection.",
-    "strengths": ["Strong automation", "Good audit partner network", "Better pricing than Vanta at scale"],
-    "weaknesses": ["Fewer integrations than Vanta", "Steeper onboarding"],
-    "integrates_with": ["okta", "github", "crowdstrike-falcon", "aws-guardduty"],
+    "strengths": [
+      "Strong automation",
+      "Good audit partner network",
+      "Better pricing than Vanta at scale"
+    ],
+    "weaknesses": [
+      "Fewer integrations than Vanta",
+      "Steeper onboarding"
+    ],
+    "integrates_with": [
+      "okta",
+      "github",
+      "crowdstrike-falcon",
+      "aws-guardduty"
+    ],
     "api_docs": "https://drata.com/product/api",
     "auth_type": "API Key",
     "ai_verdict": "Strong Vanta alternative. Better value for larger SMBs needing multiple frameworks.",
@@ -389,9 +638,22 @@
     "smb_fit": "Medium",
     "pricing": "$20/user/month",
     "description": "Incident management and on-call scheduling. Routes security alerts to the right person instantly.",
-    "strengths": ["Best alert routing", "Incident timelines", "Status page integration", "Broad integrations"],
-    "weaknesses": ["Expensive for small teams", "Overkill below 5 engineers"],
-    "integrates_with": ["crowdstrike-falcon", "aws-guardduty", "splunk", "jira"],
+    "strengths": [
+      "Best alert routing",
+      "Incident timelines",
+      "Status page integration",
+      "Broad integrations"
+    ],
+    "weaknesses": [
+      "Expensive for small teams",
+      "Overkill below 5 engineers"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "aws-guardduty",
+      "splunk",
+      "jira"
+    ],
     "api_docs": "https://developer.pagerduty.com/api-reference/",
     "auth_type": "API Key / OAuth2",
     "ai_verdict": "Use if you have on-call rotations. Overkill for solo IT; use Slack alerts instead.",
@@ -408,9 +670,21 @@
     "smb_fit": "Low",
     "pricing": "~$15K–50K/year",
     "description": "Leading Cloud Security Posture Management. Graphs your cloud risk in one view. Used by 40% of Fortune 500.",
-    "strengths": ["Best cloud risk visualisation", "Agentless", "Finds critical paths instantly"],
-    "weaknesses": ["Enterprise pricing", "Overkill for simple AWS environments"],
-    "integrates_with": ["microsoft-sentinel", "splunk", "pagerduty", "jira"],
+    "strengths": [
+      "Best cloud risk visualisation",
+      "Agentless",
+      "Finds critical paths instantly"
+    ],
+    "weaknesses": [
+      "Enterprise pricing",
+      "Overkill for simple AWS environments"
+    ],
+    "integrates_with": [
+      "microsoft-sentinel",
+      "splunk",
+      "pagerduty",
+      "jira"
+    ],
     "api_docs": "https://docs.wiz.io/wiz-docs/docs/using-the-wiz-api",
     "auth_type": "OAuth2",
     "ai_verdict": "Best CSPM. Only worth the cost above ~$1M ARR or complex multi-cloud environments.",
@@ -427,9 +701,21 @@
     "smb_fit": "Medium",
     "pricing": "~$5K–30K/year",
     "description": "Cloud security platform with anomaly detection via machine learning. Good mid-market CSPM option.",
-    "strengths": ["Behavioural anomaly detection", "Good pricing vs Wiz", "Strong container security"],
-    "weaknesses": ["Less intuitive than Wiz", "Smaller ecosystem"],
-    "integrates_with": ["splunk", "elastic-siem", "jira", "slack"],
+    "strengths": [
+      "Behavioural anomaly detection",
+      "Good pricing vs Wiz",
+      "Strong container security"
+    ],
+    "weaknesses": [
+      "Less intuitive than Wiz",
+      "Smaller ecosystem"
+    ],
+    "integrates_with": [
+      "splunk",
+      "elastic-siem",
+      "jira",
+      "slack"
+    ],
     "api_docs": "https://docs.lacework.net/api/v2/docs/",
     "auth_type": "JWT / API Key",
     "ai_verdict": "Good Wiz alternative for mid-market budgets. Consider if Wiz is out of reach.",
@@ -446,9 +732,22 @@
     "smb_fit": "High",
     "pricing": "Free up to 10 users; $8/user/month",
     "description": "Widely used issue tracker. Integrates with most security tools for remediation workflow management.",
-    "strengths": ["Universal adoption", "Flexible workflows", "Broad integrations", "Free tier"],
-    "weaknesses": ["Not security-specific", "Can become disorganised without governance"],
-    "integrates_with": ["snyk", "tenable", "crowdstrike-falcon", "pagerduty"],
+    "strengths": [
+      "Universal adoption",
+      "Flexible workflows",
+      "Broad integrations",
+      "Free tier"
+    ],
+    "weaknesses": [
+      "Not security-specific",
+      "Can become disorganised without governance"
+    ],
+    "integrates_with": [
+      "snyk",
+      "tenable",
+      "crowdstrike-falcon",
+      "pagerduty"
+    ],
     "api_docs": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
     "auth_type": "OAuth2 / API Token",
     "ai_verdict": "Use as remediation workflow tool. Many security teams track CVEs in Jira.",
@@ -465,9 +764,22 @@
     "smb_fit": "Low",
     "pricing": "~$100K+/year",
     "description": "Enterprise security operations platform. Vulnerability response, incident management, and risk management.",
-    "strengths": ["Full security operations workflow", "Enterprise ITSM integration", "Powerful automation"],
-    "weaknesses": ["Very expensive", "Requires dedicated admin", "Implementation takes months"],
-    "integrates_with": ["crowdstrike-falcon", "tenable", "palo-alto-cortex", "splunk"],
+    "strengths": [
+      "Full security operations workflow",
+      "Enterprise ITSM integration",
+      "Powerful automation"
+    ],
+    "weaknesses": [
+      "Very expensive",
+      "Requires dedicated admin",
+      "Implementation takes months"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "tenable",
+      "palo-alto-cortex",
+      "splunk"
+    ],
     "api_docs": "https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest",
     "auth_type": "OAuth2 / Basic Auth",
     "ai_verdict": "Enterprise-only. Do not adopt until you have a dedicated SecOps team.",
@@ -484,9 +796,23 @@
     "smb_fit": "High",
     "pricing": "Free tier; $8/user/month Pro",
     "description": "Used as alert routing and incident comms channel. Nearly every security tool integrates with Slack.",
-    "strengths": ["Universal", "Instant alerts", "Bot integrations", "Good free tier"],
-    "weaknesses": ["Not purpose-built for security", "Alert fatigue risk"],
-    "integrates_with": ["crowdstrike-falcon", "aws-guardduty", "pagerduty", "snyk", "intruder"],
+    "strengths": [
+      "Universal",
+      "Instant alerts",
+      "Bot integrations",
+      "Good free tier"
+    ],
+    "weaknesses": [
+      "Not purpose-built for security",
+      "Alert fatigue risk"
+    ],
+    "integrates_with": [
+      "crowdstrike-falcon",
+      "aws-guardduty",
+      "pagerduty",
+      "snyk",
+      "intruder"
+    ],
     "api_docs": "https://api.slack.com/",
     "auth_type": "OAuth2",
     "ai_verdict": "Configure Slack as your first alert destination. Zero cost on free tier.",
@@ -503,9 +829,22 @@
     "smb_fit": "Medium",
     "pricing": "Open source free; HCP: $0.03/hour",
     "description": "Industry standard secrets management. Stores, rotates, and controls access to credentials and keys.",
-    "strengths": ["Open source", "Dynamic secrets", "Audit logging", "Kubernetes native"],
-    "weaknesses": ["Complex to self-host", "Steep learning curve"],
-    "integrates_with": ["kubernetes", "aws", "azure", "github"],
+    "strengths": [
+      "Open source",
+      "Dynamic secrets",
+      "Audit logging",
+      "Kubernetes native"
+    ],
+    "weaknesses": [
+      "Complex to self-host",
+      "Steep learning curve"
+    ],
+    "integrates_with": [
+      "kubernetes",
+      "aws",
+      "azure",
+      "github"
+    ],
     "api_docs": "https://developer.hashicorp.com/vault/api-docs",
     "auth_type": "Token / AppRole",
     "ai_verdict": "Best secrets manager for developer teams. Use HCP Vault for managed option.",
@@ -522,9 +861,22 @@
     "smb_fit": "High",
     "pricing": "Free for open source; $29/dev/month business",
     "description": "Scans git repositories for exposed secrets and credentials. Monitors historical commits too.",
-    "strengths": ["Best secret detection accuracy", "Historical scan", "Free for public repos", "Slack alerts"],
-    "weaknesses": ["Focused on secrets only", "Need Snyk/Semgrep for vuln scanning"],
-    "integrates_with": ["github", "gitlab", "slack", "jira"],
+    "strengths": [
+      "Best secret detection accuracy",
+      "Historical scan",
+      "Free for public repos",
+      "Slack alerts"
+    ],
+    "weaknesses": [
+      "Focused on secrets only",
+      "Need Snyk/Semgrep for vuln scanning"
+    ],
+    "integrates_with": [
+      "github",
+      "gitlab",
+      "slack",
+      "jira"
+    ],
     "api_docs": "https://api.gitguardian.com/doc",
     "auth_type": "API Key",
     "ai_verdict": "Enable on day one. A single caught secret pays for years of subscription.",
@@ -541,13 +893,184 @@
     "smb_fit": "High",
     "pricing": "Free for 3 users; $18/user/month Starter",
     "description": "Mesh VPN built on WireGuard. Easiest zero-trust network access for SMBs. No infrastructure required.",
-    "strengths": ["Simplest VPN setup (minutes)", "Works on all devices", "No self-hosted infra", "MFA via SSO"],
-    "weaknesses": ["Less policy control than Cloudflare Access", "Not for complex segmentation"],
-    "integrates_with": ["okta", "azure-ad", "google-workspace"],
+    "strengths": [
+      "Simplest VPN setup (minutes)",
+      "Works on all devices",
+      "No self-hosted infra",
+      "MFA via SSO"
+    ],
+    "weaknesses": [
+      "Less policy control than Cloudflare Access",
+      "Not for complex segmentation"
+    ],
+    "integrates_with": [
+      "okta",
+      "azure-ad",
+      "google-workspace"
+    ],
     "api_docs": "https://tailscale.com/api",
     "auth_type": "OAuth2",
     "ai_verdict": "Best VPN for SMBs. Replaces legacy VPN in an afternoon. Start here.",
     "status": "available",
     "connected": false
+  },
+  {
+    "id": "sap-ariba",
+    "name": "SAP Ariba",
+    "category": "Procurement",
+    "subcategory": "Procure-to-Pay",
+    "logo": "📦",
+    "tier": "Enterprise",
+    "smb_fit": "Medium",
+    "pricing": "Included with SAP subscription",
+    "description": "Automate security vendor procurement. CISO selects AI-evaluated products; Cyber Dome creates PO requisitions in Ariba, triggers approval workflows, and generates contracts — no MSP, no SI, no phone call.",
+    "strengths": [
+      "World's largest B2B procurement network",
+      "Approval workflows and policy enforcement",
+      "Contract lifecycle management",
+      "Supplier risk and compliance scoring"
+    ],
+    "weaknesses": [
+      "Requires existing SAP subscription",
+      "Onboarding time for new suppliers"
+    ],
+    "use_cases": [
+      "Security product procurement",
+      "Vendor onboarding",
+      "Contract automation",
+      "Budget tracking"
+    ],
+    "connect_url": "https://www.ariba.com/api",
+    "docs_url": "https://developers.ariba.com",
+    "status": "available",
+    "ai_verdict": "Eliminates the need for a procurement team or MSP middleman for security purchasing. Direct CISO-to-vendor procurement at scale.",
+    "smb_verdict": "Best for mid-market and enterprise. SMBs without existing SAP can use Ariba Network standalone."
+  },
+  {
+    "id": "workday-hcm",
+    "name": "Workday HCM",
+    "category": "Human Capital Management",
+    "subcategory": "People & Talent",
+    "logo": "👥",
+    "tier": "Enterprise",
+    "smb_fit": "Medium",
+    "pricing": "Included with Workday subscription",
+    "description": "Hire, onboard, and manage cybersecurity talent without a recruiting agency. AI-matched profiles flow from Cyber Dome Talent Marketplace directly into Workday — creating contingent worker records, background checks, contracts, and onboarding tasks automatically.",
+    "strengths": [
+      "End-to-end contingent worker management",
+      "Background check integrations",
+      "Contract generation from templates",
+      "Onboarding task automation"
+    ],
+    "weaknesses": [
+      "Requires existing Workday subscription",
+      "Learning curve for configuration"
+    ],
+    "use_cases": [
+      "Cybersecurity specialist engagement",
+      "Contractor onboarding",
+      "Background verification",
+      "Spend management"
+    ],
+    "connect_url": "https://www.workday.com/api",
+    "docs_url": "https://developer.workday.com",
+    "status": "available",
+    "ai_verdict": "Removes the recruiting agency and MSP from the talent acquisition loop. CISO picks directly from AI-matched profiles; Workday handles the rest.",
+    "smb_verdict": "Enterprise-focused. SMBs can use Workday standalone HCM or integrate with existing HR systems."
+  },
+  {
+    "id": "workday-financials",
+    "name": "Workday Financials",
+    "category": "Finance & Spend",
+    "subcategory": "Financial Management",
+    "logo": "💰",
+    "tier": "Enterprise",
+    "smb_fit": "Medium",
+    "pricing": "Included with Workday subscription",
+    "description": "Track security budget utilisation, forecast vs actual spend, and ROI across all tools and contractors — directly in Workday Financials. Automated reporting without spreadsheets.",
+    "strengths": [
+      "Real-time security spend dashboard",
+      "Budget vs forecast tracking",
+      "Automated ROI reporting",
+      "Audit-ready financial records"
+    ],
+    "weaknesses": [
+      "Requires Workday subscription",
+      "Complex to configure for first-time users"
+    ],
+    "use_cases": [
+      "Security budget management",
+      "Spend analytics",
+      "ROI reporting",
+      "Audit support"
+    ],
+    "connect_url": "https://www.workday.com/api",
+    "docs_url": "https://developer.workday.com",
+    "status": "available",
+    "ai_verdict": "Closes the loop between security investment decisions and financial accountability — without a finance team in the middle.",
+    "smb_verdict": "More suited to mid-market where Workday is already deployed."
+  },
+  {
+    "id": "linkedin-talent",
+    "name": "LinkedIn Talent Solutions",
+    "category": "Talent Sourcing",
+    "subcategory": "Talent Marketplace",
+    "logo": "🔗",
+    "tier": "Business",
+    "smb_fit": "High",
+    "pricing": "From 25/mo (Recruiter Lite)",
+    "description": "AI agent searches LinkedIn for cybersecurity specialists matching your open gaps. Profiles are ranked by AI match score before surfacing to the CISO — no recruiter required.",
+    "strengths": [
+      "Largest professional network",
+      "900M+ profiles",
+      "AI-assisted search",
+      "Direct InMail to candidates"
+    ],
+    "weaknesses": [
+      "Credit-based InMail can add up",
+      "Not all profiles are active"
+    ],
+    "use_cases": [
+      "Talent search",
+      "Candidate ranking",
+      "Direct outreach",
+      "Skills gap analysis"
+    ],
+    "connect_url": "https://api.linkedin.com",
+    "docs_url": "https://developer.linkedin.com",
+    "status": "available",
+    "ai_verdict": "Feeds the Talent Marketplace with real-time candidate data. CISO picks directly from AI-ranked profiles without speaking to a recruiter.",
+    "smb_verdict": "High SMB fit — Recruiter Lite is affordable and covers most SMB talent needs."
+  },
+  {
+    "id": "seek-talent",
+    "name": "SEEK Talent",
+    "category": "Talent Sourcing",
+    "subcategory": "Talent Marketplace",
+    "logo": "🔍",
+    "tier": "SMB",
+    "smb_fit": "High",
+    "pricing": "From 99/job posting",
+    "description": "Australia's leading job platform. Cyber Dome AI agent posts and ranks cybersecurity specialist applications automatically — no recruiter, no agency fee.",
+    "strengths": [
+      "Dominant Australian market",
+      "AI-assisted candidate screening",
+      "Cost-effective for SMBs",
+      "API-driven posting"
+    ],
+    "weaknesses": [
+      "Australia/NZ only",
+      "Per-post pricing can add up"
+    ],
+    "use_cases": [
+      "ANZ talent acquisition",
+      "Job posting automation",
+      "Application screening"
+    ],
+    "connect_url": "https://developer.seek.com.au",
+    "docs_url": "https://developer.seek.com.au/docs",
+    "status": "available",
+    "ai_verdict": "Best sourcing platform for Australian CISOs needing local talent. AI screens applications before the CISO sees them.",
+    "smb_verdict": "High SMB fit — no subscription, pay per posting."
   }
 ]

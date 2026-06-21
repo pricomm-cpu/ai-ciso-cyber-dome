@@ -14,6 +14,8 @@ import BoardReport from "@/pages/BoardReport";
 import Assessment from "@/pages/Assessment";
 import Connectors from "@/pages/Connectors";
 import Agents from "@/pages/Agents";
+import TalentMarketplace from "@/pages/TalentMarketplace";
+import Procurement from "@/pages/Procurement";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -55,6 +57,12 @@ function App() {
           </Route>
           <Route path="/app/agents">
             {() => <Layout><Agents /></Layout>}
+          </Route>
+          <Route path="/app/talent">
+            {() => <Layout><TalentMarketplace /></Layout>}
+          </Route>
+          <Route path="/app/procurement">
+            {() => <Layout><Procurement /></Layout>}
           </Route>
 
           <Route component={NotFound} />

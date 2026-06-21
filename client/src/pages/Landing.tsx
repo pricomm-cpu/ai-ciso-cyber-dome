@@ -5,7 +5,7 @@ import {
   Target, ClipboardCheck, Search, AlertOctagon, Wrench,
   BarChart3, ShoppingBag, TrendingUp, Activity,
   Lock, Eye, RefreshCw, Server, Globe, Mail,
-  Star, Users, Building2, Play
+  Star, Users, Building2, Play, ShoppingCart, UserCheck, Plug2
 } from "lucide-react";
 
 /* ─── tiny hook: count-up on viewport entry ─── */
@@ -128,9 +128,10 @@ const AGENTS = [
 /* ─── connector logo pill ─── */
 const CONNECTORS = [
   "CrowdStrike","SentinelOne","Okta","Microsoft Defender","Azure AD","Splunk",
-  "Microsoft Sentinel","Tenable","Snyk","CrowdStrike","Cloudflare","KnowBe4",
+  "Microsoft Sentinel","Tenable","Snyk","Cloudflare","KnowBe4",
   "Vanta","Drata","Wiz","PagerDuty","Jira","ServiceNow","1Password","GitGuardian",
   "Tailscale","Proofpoint","Elastic SIEM","Lacework","HashiCorp","Semgrep","Intruder","AWS GuardDuty","Palo Alto",
+  "SAP Ariba","Workday HCM","Workday Financials","LinkedIn Talent","SEEK Talent",
 ];
 
 /* ─── comparison row ─── */
@@ -193,7 +194,7 @@ export default function Landing() {
           </div>
           {/* Nav links */}
           <nav className="hidden md:flex items-center gap-6 text-xs text-muted-foreground">
-            {["Features","Agents","Connectors","Pricing"].map(l => (
+            {["Features","Agents","Connectors","Talent","Pricing"].map(l => (
               <a key={l} href={`#${l.toLowerCase()}`} className="hover:text-foreground transition-colors">{l}</a>
             ))}
           </nav>
@@ -218,7 +219,7 @@ export default function Landing() {
         {/* Badge */}
         <div className="relative flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-[11px] text-cyan-400 font-medium mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          Autonomous AI · 8 Agents · 29 Connectors · No SI Required
+          Autonomous AI · 8 Agents · 34 Connectors · No SI · No MSP · No Agency
         </div>
 
         {/* Headline */}
@@ -235,7 +236,7 @@ export default function Landing() {
 
         {/* Sub */}
         <p className="relative max-w-2xl text-base text-muted-foreground leading-relaxed mb-10">
-          Cyber Dome is a purpose-built agentic AI platform that runs your entire cybersecurity programme — threat detection, compliance, incident response, board reporting — without an MSP, systems integrator, or vendor meeting.
+          Cyber Dome is the operating system for the modern CISO. A direct line between you and every cybersecurity product, platform, and specialist — no MSP, no SI, no consulting firm, no vendor meeting, no recruiting agency. Ever.
         </p>
 
         {/* CTAs */}
@@ -272,7 +273,7 @@ export default function Landing() {
       <section className="border-y border-border bg-card/40">
         <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           <Stat target={200}  suffix="+"  label="Assessment questions" />
-          <Stat target={29}   suffix=""   label="Security connectors" />
+          <Stat target={34}   suffix=""   label="Platform connectors" />
           <Stat target={8}    suffix=""   label="Autonomous AI agents" />
           <Stat target={2427} suffix=""   label="Agent runs per day" />
         </div>
@@ -298,8 +299,10 @@ export default function Landing() {
             { icon: Zap,          title: "Incident Response",    color: "text-orange-400 bg-orange-400/10 border-orange-400/20", desc: "AI-generated playbooks, phase-by-phase tracking, root cause analysis, and stakeholder communication drafts. From detection to closure." },
             { icon: Eye,          title: "Posture Assessment",   color: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20", desc: "200-question assessment across 10 domains. Why each question matters, how to fix each gap — with tool recommendations built in." },
             { icon: BarChart3,    title: "Board Report",         color: "text-blue-400 bg-blue-400/10 border-blue-400/20",    desc: "AI-authored executive summaries, risk narratives, and top-5 action items. Board-ready in one click — no vCISO copywriting needed." },
-            { icon: Globe,        title: "Connector Marketplace",color: "text-pink-400 bg-pink-400/10 border-pink-400/20",    desc: "29 curated security products with AI verdicts, SMB fit scores, pricing, and one-click connect. The CISO picks the best — no vendor pitch." },
+            { icon: Globe,        title: "Connector Marketplace",color: "text-pink-400 bg-pink-400/10 border-pink-400/20",    desc: "34 curated connectors with AI verdicts, SMB fit scores, and one-click connect. The CISO picks the best — no vendor pitch, no SI to configure." },
             { icon: Activity,     title: "Agent Swarm",          color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",    desc: "8 specialised AI agents running continuously. Trigger any agent on demand. Results flow back into every module automatically." },
+            { icon: ShoppingCart, title: "Procurement (Ariba)",  color: "text-orange-400 bg-orange-400/10 border-orange-400/20", desc: "AI-evaluated products, direct PO via SAP Ariba. No vendor sales call, no MSP markup, no SI required to configure the integration." },
+            { icon: UserCheck,    title: "Talent Marketplace",   color: "text-green-400 bg-green-400/10 border-green-400/20",  desc: "AI-matched cybersecurity specialists, hired directly. No recruiting agency, no consulting firm. Onboarding via Workday — zero intermediary." },
           ].map(f => <FeatureCard key={f.title} {...f} />)}
         </div>
       </section>
@@ -354,6 +357,89 @@ export default function Landing() {
         </div>
       </section>
 
+
+      {/* ── NO INTERMEDIARY ─────────────────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary text-[11px] text-muted-foreground mb-4">
+            <Plug2 size={11} className="text-cyan-400" /> Direct Operating Model
+          </div>
+          <h2 className="text-3xl font-bold text-foreground mb-3">
+            The CISO. The platform.{" "}
+            <span className="text-cyan-400">Nothing in between.</span>
+          </h2>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+            Traditionally a CISO needs an army — an MSP for ops, an SI to integrate tools, a consulting firm for people, a procurement team for purchasing. Cyber Dome eliminates all four.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {[
+            { icon: Globe,        title: "No MSP needed",   old: "Managed Security Service Provider",    new_: "8 autonomous AI agents running 24/7",      saving: "Save $80–250k/yr" },
+            { icon: Server,       title: "No SI needed",    old: "Systems Integrator for tool config",   new_: "One-click connectors, AI-configured",      saving: "Save weeks of project time" },
+            { icon: Users,        title: "No agency needed",old: "Recruiting firm for specialists",      new_: "AI-matched talent, hired directly",         saving: "Save 15–25% agency margin" },
+            { icon: ShoppingCart, title: "No vendor pitch", old: "Weeks of vendor demos & sales calls",  new_: "AI verdict + direct Ariba PO",              saving: "Save weeks per purchase" },
+          ].map(({ icon: Icon, title, old, new_, saving }) => (
+            <div key={title} className="glow-card rounded-xl p-5 flex flex-col gap-3">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center border text-cyan-400 bg-cyan-400/10 border-cyan-400/20">
+                <Icon size={16} />
+              </div>
+              <div className="text-sm font-bold text-foreground">{title}</div>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2 text-xs text-muted-foreground/50 line-through">
+                  <span className="w-1 h-1 rounded-full bg-red-400/50 mt-1.5 flex-shrink-0" />
+                  {old}
+                </div>
+                <div className="flex items-start gap-2 text-xs text-foreground/80">
+                  <CheckCircle2 size={12} className="text-green-400 mt-0.5 flex-shrink-0" />
+                  {new_}
+                </div>
+              </div>
+              <div className="mt-auto pt-2 border-t border-border text-[10px] text-cyan-400 font-medium">{saving}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Direct link visual */}
+        <div className="glow-card rounded-2xl p-8">
+          <div className="text-center mb-8">
+            <div className="text-xs text-muted-foreground uppercase tracking-widest">Traditional vs Cyber Dome</div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <div className="text-xs font-bold text-red-400 mb-4 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-red-400" /> Old model — 4+ intermediaries
+              </div>
+              <div className="flex flex-col items-center gap-2 text-xs text-center">
+                {[
+                  { label: "CISO", style: "bg-secondary border-border text-foreground" },
+                  { label: "↓  Consulting firm (people)", style: "bg-red-500/10 border-red-500/20 text-red-400" },
+                  { label: "↓  MSP / MSSP (ops)", style: "bg-red-500/10 border-red-500/20 text-red-400" },
+                  { label: "↓  Systems Integrator (tools)", style: "bg-red-500/10 border-red-500/20 text-red-400" },
+                  { label: "↓  Vendor sales team (products)", style: "bg-red-500/10 border-red-500/20 text-red-400" },
+                  { label: "Security Product / Specialist", style: "bg-secondary border-border text-foreground" },
+                ].map(({ label, style }) => (
+                  <div key={label} className={`w-full max-w-xs px-4 py-2.5 rounded-lg border ${style}`}>{label}</div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="text-xs font-bold text-green-400 mb-4 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-green-400" /> Cyber Dome — direct connection
+              </div>
+              <div className="flex flex-col items-center gap-4 text-xs text-center">
+                <div className="w-full max-w-xs px-4 py-2.5 rounded-lg border bg-secondary border-border text-foreground">CISO</div>
+                <div className="w-full max-w-xs px-4 py-4 rounded-xl border bg-cyan-500/10 border-cyan-500/30 text-cyan-400 font-semibold">
+                  ⬇ Cyber Dome AI Platform
+                  <div className="text-[10px] font-normal text-muted-foreground mt-0.5">8 agents · 34 connectors · AI matching</div>
+                </div>
+                <div className="w-full max-w-xs px-4 py-2.5 rounded-lg border bg-secondary border-border text-foreground">Security Product / Specialist</div>
+                <div className="text-[10px] text-green-400 font-medium">3 layers → 1. No margin, no delay, no intermediary.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CONNECTORS ───────────────────────────────────────────────────── */}
       <section id="connectors" className="max-w-6xl mx-auto px-6 py-24 overflow-hidden">
         <div className="text-center mb-12">
@@ -361,8 +447,8 @@ export default function Landing() {
             <Lock size={11} className="text-cyan-400" /> Connector Marketplace
           </div>
           <h2 className="text-3xl font-bold text-foreground mb-3">
-            29 security products. One place.{" "}
-            <span className="text-cyan-400">No sales calls.</span>
+            34 connectors. One platform.{" "}
+            <span className="text-cyan-400">No sales calls. No middlemen.</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
             AI analyses your gaps and recommends the best-fit tools with SMB fit scores, pricing, strengths, and weaknesses. Connect with one click — no vendor meeting, no SI required.
@@ -406,6 +492,8 @@ export default function Landing() {
             { label: "Compliance Automation",  count: 2, color: "text-purple-400 bg-purple-400/10 border-purple-400/20" },
             { label: "Cloud Security",         count: 2, color: "text-pink-400 bg-pink-400/10 border-pink-400/20" },
             { label: "Network & Email",        count: 2, color: "text-orange-400 bg-orange-400/10 border-orange-400/20" },
+            { label: "Procurement & Finance",   count: 2, color: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20" },
+            { label: "Talent & People",         count: 3, color: "text-blue-400 bg-blue-400/10 border-blue-400/20" },
           ].map(({ label, count, color }) => (
             <div key={label} className={`glow-card rounded-xl p-3 flex items-center justify-between`}>
               <span className="text-xs text-foreground/80">{label}</span>
@@ -490,6 +578,76 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* ── TALENT MARKETPLACE ───────────────────────────────────────────── */}
+      <section id="talent" className="border-y border-border bg-card/30">
+        <div className="max-w-6xl mx-auto px-6 py-24">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary text-[11px] text-muted-foreground mb-5">
+                <Users size={11} className="text-cyan-400" /> AI-Powered Talent Marketplace
+              </div>
+              <h2 className="text-3xl font-bold text-foreground mb-4 leading-tight">
+                Need people? AI finds them.{" "}
+                <span className="text-cyan-400">You pick directly.</span>
+                {" "}No agency.
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                Cyber Dome's AI agent analyses your posture gaps and surfaces pre-vetted cybersecurity specialists ranked by match score. The CISO picks directly. Engagement flows into Workday automatically — no recruiting firm, no consulting firm, no SI, no margin.
+              </p>
+              <div className="flex flex-col gap-2.5 mb-8">
+                {[
+                  "AI matches specialists to your exact security gaps",
+                  "Pre-vetted profiles — certifications, experience, availability",
+                  "Engage directly — no recruiter, no agency commission",
+                  "Onboarding via Workday — contracts, BGC, tasks automated",
+                  "Full specialist marketplace: vCISO, IR, pentest, GRC, cloud",
+                ].map(p => (
+                  <div key={p} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                    <CheckCircle2 size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
+                    {p}
+                  </div>
+                ))}
+              </div>
+              <Link href="/app#/talent">
+                <a className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium group">
+                  Browse talent marketplace <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </Link>
+            </div>
+            {/* Sample profiles */}
+            <div className="grid grid-cols-1 gap-3">
+              {[
+                { initials: "AO", name: "Alex Okonkwo",    role: "CISO / Virtual CISO",         match: 97, certs: "CISSP · CISM", rate: "$2,200/day",  avail: "Immediate", color: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20" },
+                { initials: "YT", name: "Yuki Tanaka",     role: "AI Security Lead",             match: 92, certs: "CISSP · AWS ML", rate: "$2,000/day", avail: "2 weeks",   color: "text-purple-400 bg-purple-500/10 border-purple-500/20" },
+                { initials: "SW", name: "Sarah Willoughby",role: "Incident Response Lead",       match: 89, certs: "GCIH · GCFA",    rate: "$1,600/day", avail: "Immediate", color: "text-orange-400 bg-orange-500/10 border-orange-500/20" },
+                { initials: "MT", name: "Marcus Thompson", role: "IAM Lead",                     match: 88, certs: "CISSP · Okta",    rate: "$1,750/day", avail: "1 month",   color: "text-blue-400 bg-blue-500/10 border-blue-500/20" },
+              ].map(({ initials, name, role, match, certs, rate, avail, color }) => (
+                <div key={name} className="glow-card rounded-xl p-4 flex items-center gap-4 hover:-translate-y-0.5 transition-transform">
+                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center text-sm font-bold flex-shrink-0 ${color}`}>
+                    {initials}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="text-xs font-semibold text-foreground">{name}</span>
+                      <CheckCircle2 size={11} className="text-cyan-400 flex-shrink-0" />
+                    </div>
+                    <div className="text-[11px] text-muted-foreground">{role} · {certs}</div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-xs font-bold text-foreground">{match}% <span className="text-[10px] text-muted-foreground font-normal">match</span></div>
+                    <div className="text-[10px] text-muted-foreground">{rate}</div>
+                    <div className={`text-[10px] mt-0.5 font-medium ${avail === "Immediate" ? "text-green-400" : "text-yellow-400"}`}>{avail}</div>
+                  </div>
+                </div>
+              ))}
+              <div className="text-center text-[11px] text-muted-foreground pt-1">
+                2,400+ verified specialists · Ranked by AI match score
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── VS COMPARISON ────────────────────────────────────────────────── */}
       <section className="max-w-5xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
@@ -511,7 +669,9 @@ export default function Landing() {
             <CmpRow label="Incident playbook"     us="Generated instantly"   them="Consultant engagement" />
             <CmpRow label="Assessment"            us="200Q self-serve"       them="$10k+ gap assessment" />
             <CmpRow label="Technology refresh"    us="AI-recommended"        them="SI project required" />
-            <CmpRow label="Lock-in risk"          us="None"                  them="Multi-year contracts" />
+            <CmpRow label="Specialist hiring"      us="AI-matched, no agency" them="Consulting firm + 15–25% margin" />
+            <CmpRow label="Product procurement"    us="Ariba PO, same day"    them="Weeks of vendor demos" />
+            <CmpRow label="Lock-in risk"           us="None"                  them="Multi-year contracts" />
           </div>
         </div>
       </section>
@@ -627,7 +787,7 @@ export default function Landing() {
               <path d="M16 4 L24 8.5 L24 19 Q24 26 16 29 Q8 26 8 19 L8 8.5 Z" stroke="hsl(192 100% 42%)" strokeWidth="1.5" fill="none"/>
               <circle cx="16" cy="18" r="3" fill="hsl(192 100% 42%)"/>
             </svg>
-            <span className="text-xs text-muted-foreground">AI CISO Cyber Dome · No MSP required · No SI required · No vendor meeting</span>
+            <span className="text-xs text-muted-foreground">AI CISO Cyber Dome · No MSP · No SI · No Agency · No Vendor Meeting</span>
           </div>
           <div className="flex items-center gap-5 text-xs text-muted-foreground">
             {["Privacy","Terms","Security"].map(l => (

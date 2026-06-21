@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import {
   Shield, AlertTriangle, CheckSquare, Cpu, Zap,
-  BarChart3, Menu, Bell, ClipboardCheck, Plug, Bot
+  BarChart3, Menu, Bell, ClipboardCheck, Plug, Bot,
+  Users, ShoppingCart
 } from "lucide-react";
 
 const NAV = [
@@ -15,6 +16,8 @@ const NAV = [
   { path: "/app/board-report",label: "Board Report",      icon: BarChart3 },
   { path: "/app/connectors",  label: "Connectors",        icon: Plug },
   { path: "/app/agents",      label: "Agent Swarm",       icon: Bot },
+  { path: "/app/talent",      label: "Talent Marketplace", icon: Users },
+  { path: "/app/procurement", label: "Procurement",        icon: ShoppingCart },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
